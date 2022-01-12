@@ -5,9 +5,10 @@ import Login from "./Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Showevents from "./Showevents";
 //import Button from 'react-bootstrap/Button';
-import Nav from "react-bootstrap/Nav";
+//import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-bootstrap";
+//import { NavLink } from "react-bootstrap";
+
 function App() {
   const [token,changeToken] = useState(window.localStorage.getItem("token"));
   const client = new ApiClient(
@@ -25,7 +26,7 @@ function App() {
   return (
     <>
     <Navbar bg="primary" variant="dark">
-   <Navbar.Brand><h2>EventsApp</h2></Navbar.Brand>
+   <Navbar.Brand><h2>The Developer Academy</h2></Navbar.Brand>
    {/*<Navbar.Toggle aria-controls="basic-nav-nav"></Navbar.Toggle>
    <Navbar.Collapse className="nav-link">
      <Nav>

@@ -9,20 +9,33 @@ function Add(props) {
     e.preventDefault();
     cDisabled(true);
     let result;
-    if (props.currentEvt) {
-      result = props.client.updateEvt(
-        props.currentEvt._id,
-        e.target.evtName.value,
-        e.target.place.value,
-        e.target.description.value,
-        e.target.date.value,
-        e.target.time.value,
-        e.target.covidPass.checked
+    if (props.currentprofileForm) {
+      result = props.client.updateProfileForm(
+        props.currentProfileForm._id,
+        e.target.profileFormName.value,
+        e.target.lastname.value,
+        e.target.email.value,
+        e.target.bio.value,
+        e.target.linkedin.value,
+        e.target.github.value,
+        e.target.portfolio.value,
+        e.target.picture.value,
+        e.target.cv.value,
+
+        //e.target.covidPass.checked
         
       );
     } else {
-      result = props.client.addEvt(//e.target.evtDate.value,
-        e.target.evtName.value, e.target.place.value,e.target.description.value, e.target.date.value, e.target.time.value, e.target.covidPass.checked );
+      result = props.client.addProfileForm(
+        e.target.profileFormName.value, 
+        e.target.lastname.value,
+        e.target.email.value,
+        e.target.bio.value,
+        e.target.linkedin.value,
+        e.target.github.value,
+        e.target.portfolio.value,
+        e.target.picture.value,
+        e.target.cv.value );
     }
     result
       .then(() => {
@@ -38,7 +51,7 @@ function Add(props) {
   return (
     <>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-    {props.currentEvt? "Update Event" : "Add Event"}
+    {props.currentProfileForm? "Update Profile" : "Add Profile"}
     </div>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
        <br />
@@ -46,67 +59,90 @@ function Add(props) {
         {/*Date: <br />
         <input
           type="text"
-          defaultValue={props.currentEvt?.date}
-          name="evtDate"
+          defaultValue={props.currentProfileForm?.date}
+          name="profileFormDate"
           disabled={disabled}
         />*/}
-        Event Name: <br />
+        First Name: <br />
         <input
          required
           type="text"
-          defaultValue={props.currentEvt?.name}
-          name="evtName"
+          defaultValue={props.currentProfileForm?.name}
+          name="profileFormName"
           disabled={disabled}
         />
         <br />
-        Location: <br />
+        Last Name: <br />
+        <input
+         required
+          type="text"
+          defaultValue={props.currentProfileForm?.lastname}
+          name="lastName"
+          disabled={disabled}
+        />
+        Email <br />
         <input
            required
           type="text"
-          defaultValue={props.currentEvt?.place}
-          name="place"
+          defaultValue={props.currentProfileForm?.email}
+          name="email"
           disabled={disabled}
         /><br/>
-        Description
+        Bio
         <br />
         <input
-          required
+          
           type="text"
-          defaultValue={props.currentEvt?.description}
-          name="description"
+          defaultValue={props.currentProfileForm?.bio}
+          name="bio"
           disabled={disabled}
           /><br/>
-        Date
+        Linkedin
         <br />
         <input
-           type="date"
-          defaultValue={props.currentEvt?.date}
-          name="date"
+           type="text"
+          defaultValue={props.currentProfileForm?.linkedin}
+          name="linkedin"
           disabled={disabled}
         /><br/>
-       {/* <div>
-        <DatePicker
-          selected={props.date}
-          />
-       </div>*/}
-        Time
+       Github
+        <br />
+        <input
+           type="text"
+          defaultValue={props.currentProfileForm?.github}
+          name="github"
+          disabled={disabled}
+        /><br/>
+        Portfolio
         <br/>
         <input
-         required
+         
           type="text"
-          defaultValue={props.currentEvt?.time}
-          name="time"
+          defaultValue={props.currentProfileForm?.portfolio}
+          name="portfolio"
           disabled={disabled}
         />
         <br/>
-        covidPass
+        picture
         <br/>
         <input
-          type="checkbox"
-          defaultChecked={props.currentEvt?.covidPass}
-          name="covidPass"
+         
+          type="file"
+          defaultValue={props.currentProfileForm?.picture}
+          name="picture"
           disabled={disabled}
         />
+        <br/>
+        CV
+        <br/>
+        <input
+         
+          type="file"
+          defaultValue={props.currentProfileForm?.cv}
+          name="cv"
+          disabled={disabled}
+        />
+        
         <br />
         <Button size="sm"type="submit" disabled={disabled}>
           {" "}

@@ -1,5 +1,7 @@
 import axios from "axios";
 const url = "http://localhost:3001/";
+
+
 export class ApiClient {
   constructor(tokenProvider,logoutHandler){
     this.tokenProvider = tokenProvider;
@@ -34,16 +36,16 @@ export class ApiClient {
   login(username,password) {
     return this.apiCall("post",url + "auth/",{username: username, password:password});
   }
-  getEvts() {
+  getProfileForms() {
     return this.authenticatedCall("get", url);
   }
-  addEvt(name, place, description, date, time, covidPass) {
-    return this.authenticatedCall("post", url, {name, place,description, date, time, covidPass});
+  addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv) {
+    return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv});
   }
-  removeEvt(id) {
+  removeProfileForm(id) {
     return this.authenticatedCall("delete", `${url}${id}`);
   }
-  updateEvt(id,name, place, description, date, time, covidPass) {
-    return this.authenticatedCall("put", `${url}${id}`, { name, place,description,date,time,covidPass});
+  updateProfileForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv) {
+    return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv});
   }
 }
