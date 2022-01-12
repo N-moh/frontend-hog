@@ -60,7 +60,7 @@ function Dashboard(props) {
             <th>Email</th>
             <th>Bio</th>
             
-          </tr>
+         </tr>
        </thead>
   <tbody>
   {buildrows()}

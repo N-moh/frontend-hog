@@ -9,7 +9,8 @@ function Add(props) {
     e.preventDefault();
     cDisabled(true);
     let result;
-    if (props.currentprofileForm) {
+    if (props.currentProfileForm) {
+      console.log("update")
       result = props.client.updateProfileForm(
         props.currentProfileForm._id,
        
@@ -26,6 +27,7 @@ function Add(props) {
         
       );
     } else {
+      console.log()
       result = props.client.addProfileForm(
          
         e.target.fullname.value,
