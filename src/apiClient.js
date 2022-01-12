@@ -39,13 +39,13 @@ export class ApiClient {
   getProfileForms() {
     return this.authenticatedCall("get", url);
   }
-  addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv) {
-    return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv});
+  addProfileForm(fullname,email,bio,linkedin,github,portfolio,picture,cv) {
+    return this.authenticatedCall("post", url, {fullname,email,bio,linkedin,github,portfolio,picture,cv});
   }
   removeProfileForm(id) {
     return this.authenticatedCall("delete", `${url}${id}`);
   }
-  updateProfileForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv) {
-    return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,picture,cv});
+  updateProfileForm(id,fullname,email,bio,linkedin,github,portfolio,picture,cv) {
+    return this.authenticatedCall("put", `${url}${id}`, { fullname,email,bio,linkedin,github,portfolio,picture,cv});
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Add from "./Add";
 import Button from 'react-bootstrap/Button';
-import Moment from 'react-moment';
+
 
 import Table from 'react-bootstrap/Table';
 function Dashboard(props) {
@@ -24,8 +24,8 @@ function Dashboard(props) {
       return (
         <tr key={current._id}>
           {/*<td>{current.date}</td>*/}
-          <td>{current.name}</td>
-          <td>{current.lastname}</td>
+         
+          <td>{current.fullname}</td>
           <td>{current.email}</td>
           <td>{current.bio}</td>
           {/*<td> <Moment format="DD MMM yyyy" >{current.date}</Moment></td>
@@ -54,16 +54,14 @@ function Dashboard(props) {
         </Button>
       </div>
       <Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      
+      <thead>
+         <tr>
+            <th>Full Name</th>       
             <th>Email</th>
             <th>Bio</th>
             
-    </tr>
-  </thead>
+          </tr>
+       </thead>
   <tbody>
   {buildrows()}
   </tbody>

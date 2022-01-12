@@ -12,30 +12,31 @@ function Add(props) {
     if (props.currentprofileForm) {
       result = props.client.updateProfileForm(
         props.currentProfileForm._id,
-        e.target.profileFormName.value,
-        e.target.lastname.value,
+       
+        e.target.fullname.value,
         e.target.email.value,
         e.target.bio.value,
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        e.target.picture.value,
-        e.target.cv.value,
+        //e.target.picture.value,
+        //e.target.cv.value,
 
         //e.target.covidPass.checked
         
       );
     } else {
       result = props.client.addProfileForm(
-        e.target.profileFormName.value, 
-        e.target.lastname.value,
+         
+        e.target.fullname.value,
         e.target.email.value,
         e.target.bio.value,
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        e.target.picture.value,
-        e.target.cv.value );
+        //e.target.picture.value,
+       // e.target.cv.value
+        );
     }
     result
       .then(() => {
@@ -63,23 +64,15 @@ function Add(props) {
           name="profileFormDate"
           disabled={disabled}
         />*/}
-        First Name: <br />
+        Full Name: <br />
         <input
          required
           type="text"
-          defaultValue={props.currentProfileForm?.name}
-          name="profileFormName"
+          defaultValue={props.currentProfileForm?.fullname}
+          name="fullname"
           disabled={disabled}
         />
         <br />
-        Last Name: <br />
-        <input
-         required
-          type="text"
-          defaultValue={props.currentProfileForm?.lastname}
-          name="lastName"
-          disabled={disabled}
-        />
         Email <br />
         <input
            required
@@ -123,7 +116,7 @@ function Add(props) {
           disabled={disabled}
         />
         <br/>
-        picture
+        {/*picture
         <br/>
         <input
          
@@ -141,7 +134,7 @@ function Add(props) {
           defaultValue={props.currentProfileForm?.cv}
           name="cv"
           disabled={disabled}
-        />
+        /><br/>*/}
         
         <br />
         <Button size="sm"type="submit" disabled={disabled}>
