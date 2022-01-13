@@ -48,4 +48,8 @@ export class ApiClient {
   updateProfileForm(id,fullname,email,bio,linkedin,github,portfolio,picture,cv) {
     return this.authenticatedCall("put", `${url}${id}`, { fullname,email,bio,linkedin,github,portfolio,picture,cv});
   }
+  queryResult(searchParams){
+    return this.authenticatedCall("post", `${url}tda/search`, searchParams)
+  }
+
 }
