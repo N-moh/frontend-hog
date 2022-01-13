@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Add from "./Add";
 import Button from 'react-bootstrap/Button';
+import Find from "./Find";
+import { Col } from "react-bootstrap";
 
 
 import Table from 'react-bootstrap/Table';
 function Dashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
   const [current, cCurrent] = useState(undefined);
+  const [show2,setShow2]=useState(false)
   const refreshList = () => {
     props.client.getProfileForms().then((response) => cProfileForms(response.data));
   };
@@ -19,6 +22,9 @@ function Dashboard(props) {
   useEffect(() => {
     refreshList();
   }, []);
+  const querySearch = (searchParams) => {
+    props.client.queryResult(searchParams).then((response) => cProfileForms(response.data))
+  }
   const buildrows = () => {
     return profileForms.map((current) => {
       return (
@@ -75,6 +81,19 @@ function Dashboard(props) {
         currentProfileForm={current}
         logout={props.logout}
       />
+      <Col xs={6}>
+        { show2? 
+          <>
+        <Find
+            client={props.client}
+            querySearch = {querySearch}
+            currentAd={current}
+          />
+          <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a>
+          <a class="see-less-btn" onClick={() => refreshList()}>Clear Filtered List</a>
+          </>
+        :<a class="buttonShowAdd2" onClick={() => setShow2(!show2)}>Find Event</a> }
+        </Col>
      {/*<Showevents/>*/}
     </>
   );
