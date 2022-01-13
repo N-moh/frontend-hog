@@ -20,7 +20,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        //e.target.picture.value,
+        e.target.picture.value,
         //e.target.cv.value,
 
         //e.target.covidPass.checked
@@ -36,7 +36,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        //e.target.picture.value,
+        e.target.picture.value,
        // e.target.cv.value
         );
     }
@@ -118,17 +118,17 @@ function Add(props) {
           disabled={disabled}
         />
         <br/>
-        {/*picture
+        picture
         <br/>
         <input
          
-          type="file"
+          type="text"
           defaultValue={props.currentProfileForm?.picture}
           name="picture"
           disabled={disabled}
         />
         <br/>
-        CV
+        {/* CV
         <br/>
         <input
          
@@ -136,7 +136,7 @@ function Add(props) {
           defaultValue={props.currentProfileForm?.cv}
           name="cv"
           disabled={disabled}
-        /><br/>*/}
+        /><br/> */}
         
         <br />
         <Button size="sm"type="submit" disabled={disabled}>
