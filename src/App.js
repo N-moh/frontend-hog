@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dashboard from "./Dashboard";
+import ProfileDashboard from "./ProfileDashboard";
 import { ApiClient } from "./apiClient";
 import Login from "./Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -44,7 +44,7 @@ function App() {
  </Navbar>
     
       {token ? (
-        <Dashboard client={client}  logout={logout}/>
+        <ProfileDashboard client={client}  logout={logout}/>
       ) : (
         <Login loggedIn={(token) => login(token)} client={client} logout={logout}/>
       )
