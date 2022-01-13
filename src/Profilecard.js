@@ -29,9 +29,10 @@ console.log(Profilecard)
                     <Card.Text>{props.github}</Card.Text>
                     <Card.Text>{props.portfolio}</Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
+                    <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a><br/>
                     <Button variant="danger" size="sm" onClick={() => props.removeProfileForm(props.id)}> remove</Button>
                     <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
-                    <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a></> :<a class="see-more-btn" onClick={() => setShow(!show)}>See more</a>
+                    </> :<a class="see-more-btn" onClick={() => setShow(!show)}>See more</a>
                     }
                     <br />
 
