@@ -11,6 +11,7 @@ function ProfileDashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
   const [current, cCurrent] = useState(undefined);
   const [show2,setShow2]=useState(false)
+  const [ashow2,asetShow2]=useState(false)
 
   const refreshList = () => {
     props.client.getProfileForms().then((response) => cProfileForms(response.data));
@@ -49,7 +50,7 @@ function ProfileDashboard(props) {
       <>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
     <br/>
-      <h3>Dashboard
+      <h3>Admin Dashboard
       </h3>
       </div>
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
@@ -58,23 +59,13 @@ function ProfileDashboard(props) {
           Logout{" "}
         </Button>
       </div>
-        Profiles
-        <br />
+      
+        
         <div class="row row-cols-1 row-cols-md-3 g-4">
        {buildcards()}
         </div>
       
-
-      <Add
-        client={props.client}
-        refreshList={() => {
-          refreshList();
-          cCurrent(undefined);
-        }}
-        currentProfileForm={current}
-        logout={props.logout}
-      />
-      <Col xs={6}>
+        <Col xs={6}>
         { show2? 
           <>
         <Find
@@ -82,12 +73,25 @@ function ProfileDashboard(props) {
             querySearch = {querySearch}
             currentAd={current}
           />
-          <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a>
-          <a class="see-less-btn" onClick={() => refreshList()}>Clear Filtered List</a>
+          <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a><br/>
+          <a class="see-less-btn" onClick={() => refreshList()}>Clear filtered list</a>
           </>
-        :<a class="buttonShowAdd2" onClick={() => setShow2(!show2)}>Find Event</a> }
+          :<a class="buttonShowAdd2" onClick={() => setShow2(!show2)}>Find participants</a> }
+
+          
         </Col>
-     {/*<Showevents/>*/}
+      <Add
+        client={props.client}
+        refreshList={() => {
+          refreshList();
+          cCurrent(undefined);
+        }}
+
+        currentProfileForm={current}
+        logout={props.logout}
+      />
+      
+     
     </>
   );
   

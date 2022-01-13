@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import './App.css';
+import { Button } from "react-bootstrap";
+
 
 function Find(props) {
     const [disabled, cDisabled] = useState(false);
@@ -37,10 +39,11 @@ function Find(props) {
             placeholder="Participant Email"
         />
         <br />
-        <button className="buttonSubmit" type="submit" disabled={disabled}>
+        <br/>
+        <Button className="buttonSubmit" size="sm" type="submit" disabled={disabled}>
             {" "}
             Search{" "}
-        </button>
+        </Button>
     </form>
     </Container>
     </>

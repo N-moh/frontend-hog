@@ -20,7 +20,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        e.target.picture.value,
+        //e.target.picture.value,
         //e.target.cv.value,
 
         //e.target.covidPass.checked
@@ -36,7 +36,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        e.target.picture.value,
+        //e.target.picture.value,
        // e.target.cv.value
         );
     }
@@ -118,7 +118,7 @@ function Add(props) {
           disabled={disabled}
         />
         <br/>
-        picture
+        {/*picture
         <br/>
         <input
          
