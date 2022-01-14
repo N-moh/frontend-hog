@@ -16,11 +16,11 @@ console.log(Profilecard)
         
             
             
-            <Card id="main"className=" m-5 "  style={{ width: '20rem' }} >
+            <Card id="main"className=" m-5 "  style={{ width: '20rem' ,backgroundColor:'lightgrey'}} >
                 <Card.Body >
-                 <Card.Title>Profile</Card.Title>
-                 <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />
-                    <Card.Text>Name: {props.fullname}</Card.Text>
+                 <Card.Title></Card.Title>
+                 <Card.Img  className="mh-10 mw-10 img-thumbnail grey lighten-4  hover-shadow" src={props.picture} alt="" />
+                    <Card.Text><h4> {props.fullname}</h4></Card.Text>
                     <Card.Text>Email: {props.email}</Card.Text>
                     { show?
                     <>
