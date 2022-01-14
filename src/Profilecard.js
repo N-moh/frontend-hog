@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import  Card  from "react-bootstrap/Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App'
 import Button from "react-bootstrap/Button";
 
 //import Moment from "react-moment";
@@ -16,7 +17,7 @@ console.log(Profilecard)
         
             
             
-            <Card id="main"className=" m-5 "  style={{ width: '20rem' }} >
+            <Card id="main"className=" m-5 Card "  style={{ width: '20rem' }} >
                 <Card.Body >
                  <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />
                     <Card.Text>Name: {props.fullname}</Card.Text>
