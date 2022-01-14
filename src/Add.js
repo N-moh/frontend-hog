@@ -77,7 +77,7 @@ function Add(props) {
         <input
          required
           type="text"
-          defaultValue={props.currentProfileForm?.fullname}
+          defaultValue={props.currentProfileForm?.fullname || ""}
           name="fullname"
           disabled={disabled}
         />
