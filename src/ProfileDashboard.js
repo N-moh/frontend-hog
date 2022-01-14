@@ -51,7 +51,7 @@ function ProfileDashboard(props) {
   }
     return (
 
-      <main>
+       <main>
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Admin Dashboard</h5>
@@ -107,7 +107,7 @@ function ProfileDashboard(props) {
         </Col>
         </Row>
         </Container>
-    </main>
+     </main>
 
   );
   

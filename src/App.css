@@ -14,7 +14,7 @@ main {
   min-height: 100vh;
   min-width: 100vw;
   overflow: hidden;
-  background-color: #264466;
+  background-color: #ffff;
   margin: auto;
 }
 .contentContainer{
@@ -22,7 +22,7 @@ main {
   height: 100%;
   align-items: center;
   margin: auto;
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; 
 }
 .header-title{
   font-size: 35px;
