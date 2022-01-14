@@ -16,6 +16,7 @@ function ProfileDashboard(props) {
   const [current, cCurrent] = useState(undefined);
   const [show,setShow]=useState(false)
   const [show2,setShow2]=useState(false)
+  const [ashow2,asetShow2]=useState(false)
 
   const refreshList = () => {
     props.client.getProfileForms().then((response) => cProfileForms(response.data));
@@ -49,17 +50,22 @@ function ProfileDashboard(props) {
     });
   }
     return (
+
       <main>
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Admin Dashboard</h5>
           </Row>
+
+    
+
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
       <Button  onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
       </div>
+
         <br />
         <div class="row row-cols-1 row-cols-md-3 g-4">
        {buildcards()}
@@ -68,15 +74,20 @@ function ProfileDashboard(props) {
       <Col xs={6}>
       { show?
       <>
+
+
+
       <Add
         client={props.client}
         refreshList={() => {
           refreshList();
           cCurrent(undefined);
         }}
+
         currentProfileForm={current}
         logout={props.logout}
       />
+
       <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
       </>
       : <a class="buttonShowAdd2" onClick={() => setShow(!show)}>Add post</a> }
@@ -97,6 +108,7 @@ function ProfileDashboard(props) {
         </Row>
         </Container>
     </main>
+
   );
   
 }

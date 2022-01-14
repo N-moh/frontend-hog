@@ -20,7 +20,10 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        // e.target.picture.value,
+
+        
+        //e.target.picture.value,
+
         //e.target.cv.value,
 
         //e.target.covidPass.checked
@@ -36,7 +39,9 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        // e.target.picture.value,
+
+        
+        //e.target.picture.value,
        // e.target.cv.value
         );
     }
@@ -118,7 +123,13 @@ function Add(props) {
           disabled={disabled}
         />
         <br/>
+
+        
+
+
         {/* picture
+
+       
         <br/>
         <input
          
@@ -126,8 +137,12 @@ function Add(props) {
           defaultValue={props.currentProfileForm?.picture || "https://i.imgur.com/WiuO4Qg.png"}
           name="picture"
           disabled={disabled}
-        />
-        <br/> */}
+
+       
+
+        /> */}
+        <br/>
+
         {/* CV
         <br/>
         <input

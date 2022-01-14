@@ -17,10 +17,13 @@ console.log(Profilecard)
         
             
             
+
             <Card id="main"className=" m-5 Card "  style={{ width: '20rem' }} >
                 <Card.Body >
+
                  <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />
                     <Card.Text>Name: {props.fullname}</Card.Text>
+
                     <Card.Text>Email: {props.email}</Card.Text>
                     { show?
                     <>
@@ -29,6 +32,7 @@ console.log(Profilecard)
                     <Card.Text>{props.github}</Card.Text>
                     <Card.Text>{props.portfolio}</Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
+
                     <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
                     <br />
                     <br />
@@ -36,6 +40,8 @@ console.log(Profilecard)
                     <Button variant="danger" size="sm" onClick={() => props.removeProfileForm(props.id)}> remove</Button>
                     </> 
                     :<a class="see-more-btn" onClick={() => setShow(!show)}>See more</a>
+
+
                     }
                     <br />
 
