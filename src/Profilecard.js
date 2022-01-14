@@ -18,7 +18,7 @@ console.log(Profilecard)
             
             
 
-            <Card id="main"className=" m-5 Card "  style={{ width: '20rem' }} >
+            <Card id="main"className="Card "  style={{ width: '18rem' }} >
                 <Card.Body >
 
                  <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />

@@ -25,7 +25,7 @@ function App() {
   }
   return (
     <>
-    <Navbar bg="primary" variant="dark">
+    <Navbar bg="secondary alert" variant="dark">
    <Navbar.Brand><h2>The Developer Academy</h2></Navbar.Brand>
    {/*<Navbar.Toggle aria-controls="basic-nav-nav"></Navbar.Toggle>
    <Navbar.Collapse className="nav-link">

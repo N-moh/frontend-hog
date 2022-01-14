@@ -153,7 +153,6 @@ function Add(props) {
           disabled={disabled}
         /><br/> */}
         
-        <br />
         <Button size="sm"type="submit" disabled={disabled}>
           {" "}
           Submit{" "}
