@@ -20,6 +20,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
+        e.target.hired.checked
 
         
         //e.target.picture.value,
@@ -39,6 +40,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
+        e.target.hired.checked
 
         
         //e.target.picture.value,
@@ -97,6 +99,7 @@ function Add(props) {
           name="bio"
           disabled={disabled}
           /><br/>
+          
         Linkedin
         <br />
         <input
@@ -123,6 +126,18 @@ function Add(props) {
           disabled={disabled}
         />
         <br/>
+        <br/>
+        Hired
+        <br/>
+        <input
+          
+          type="checkbox"
+          defaultChecked={props.currentProfileForm?.hired}
+          name="hired"
+          disabled={disabled}
+        />
+
+        
 
         
 

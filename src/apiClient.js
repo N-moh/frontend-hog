@@ -39,14 +39,14 @@ export class ApiClient {
   getProfileForms() {
     return this.authenticatedCall("get", url);
   }
-  addProfileForm(fullname,email,bio,linkedin,github,portfolio,picture,cv) {
-    return this.authenticatedCall("post", url, {fullname,email,bio,linkedin,github,portfolio,picture,cv});
+  addProfileForm(fullname,email,bio,linkedin,github,portfolio,hired) {
+    return this.authenticatedCall("post", url, {fullname,email,bio,linkedin,github,portfolio,hired});
   }
   removeProfileForm(id) {
     return this.authenticatedCall("delete", `${url}${id}`);
   }
-  updateProfileForm(id,fullname,email,bio,linkedin,github,portfolio,picture,cv) {
-    return this.authenticatedCall("put", `${url}${id}`, { fullname,email,bio,linkedin,github,portfolio,picture,cv});
+  updateProfileForm(id,fullname,email,bio,linkedin,github,portfolio,hired) {
+    return this.authenticatedCall("put", `${url}${id}`, { fullname,email,bio,linkedin,github,portfolio,hired});
   }
   queryResult(searchParams){
     return this.authenticatedCall("post", `${url}tda/search`, searchParams)

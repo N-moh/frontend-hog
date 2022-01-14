@@ -22,7 +22,7 @@ console.log(Profilecard)
                 <Card.Body >
 
                  <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />
-                    <Card.Text>Name: {props.fullname}</Card.Text>
+                    <Card.Text><h3> {props.fullname}</h3></Card.Text>
 
                     <Card.Text>Email: {props.email}</Card.Text>
                     { show?
@@ -32,7 +32,7 @@ console.log(Profilecard)
                     <Card.Text>{props.github}</Card.Text>
                     <Card.Text>{props.portfolio}</Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
-
+                    <Card.Text>Hired: {props.hired}</Card.Text>
                     <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
                     <br />
                     <br />
