@@ -118,7 +118,10 @@ function Add(props) {
           disabled={disabled}
         />
         <br/>
-        {/*picture
+
+        {/* picture
+
+        
         <br/>
         <input
          
@@ -126,7 +129,7 @@ function Add(props) {
           defaultValue={props.currentProfileForm?.picture}
           name="picture"
           disabled={disabled}
-        />
+        /> */}
         <br/>
         {/* CV
         <br/>
