@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+th {
+  border-bottom: 1px solid black;
+  color: #073366;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+tr:nth-child(even){
+  background-color: #1073e585;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+tr:nth-child(odd){
+  color: #054A99;
+  background-color: #8fc3ff7e;
+}
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  background-color: #264466;
+  margin: auto;
+}
+.contentContainer{
+  width: 80%;
+  height: 100%;
+  align-items: center;
+  margin: auto;
+  background-color: #f2f2f2;
+}
+.header-title{
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  color: #313131;
+  text-shadow: 1px 1px rgba(50,50,70,0.5);
+}
+.header-body{
+  font-size: 20px;
+  color: #073366;
+  padding-top: 20px;
+}
+.form{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  align-items: center;
+}
+table{
+  table-layout: fixed;
+}
+.formContainer{
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  margin: auto;
+}
+.buttonUpdate {
+  padding: 3px 15px;
+  border-radius: 5px;
+  border: none;
+  outline:none;
+  background-color: #D2E4FD;
+  border-radius: 5px;
+  color: #5C8CAD;
+  border-width: 2px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  margin: 2px;
+}
+.buttonUpdate:hover {
+  background-color: #5C8CAD;
+  color: #FFF;
+}
+.buttonRemove {
+  padding: 3px 15px;
+  border-radius: 5px;
+  border: none;
+  outline:none;
+  background-color: #F8D3CF;
+  border-radius: 5px;
+  color: #6b0404;
+  border-width: 2px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.buttonRemove:hover {
+  background-color: #6b0404;
+  color: white;
+}
+.buttonSubmit{
+  padding: 3px 15px;
+  border-radius: 5px;
+  border: none;
+  outline:none;
+  background-color: #CDE9D6;
+  border-radius: 5px;
+  color: #0b6607;
+  border-width: 2px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.buttonSubmit:hover {
+  background-color: #0b6607;
+  color: white;
+}
+.formRow{
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+}
+.buttonShowAdd {
+  padding: 3px 15px;
+  border-radius: 5px;
+  background-color: #1073e585;
+  color: #fff;
+  border: none;
+  outline:none;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease;
+  align-items: center;
+  justify-content:center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonShowAdd2 {
+  padding: 3px 15px;
+  border-radius: 5px;
+  background-color: #26446693;
+  color: #fff;
+  border: none;
+  outline:none;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease;
+  align-items: center;
+  justify-content:center;
+}
+
+.buttonShowAdd:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(53, 53, 53, 0.9);
+}
+.buttonShowAdd2:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #073366;
+}
+.see-less-btn {
+  padding: 3px 15px;
+  border-radius: 5px;
+  background-color: #5a5a5a85;
+  color: #fff;
+  border: none;
+  outline:none;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+.see-less-btn:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(53, 53, 53, 0.9);
+  transition: 0.5s ease;
+}
+.bodyRow{
+  padding: 10px;
+}
+.see-more-btn {
+  padding: 3px 15px;
+  border-radius: 5px;
+  background-color: #ff8a05;
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  border: none;
+  outline:none;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+.see-more-btn:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(53, 53, 53, 0.9);
+  transition: 0.5s ease;
 }
