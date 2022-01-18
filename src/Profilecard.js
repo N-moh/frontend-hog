@@ -50,7 +50,7 @@ console.log(Profilecard)
                     <Card.Text>{props.portfolio}</Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
                     <Card.Text>Hired: {props.hired}</Card.Text>
-                    <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
+                    <Button class="see-less-btn" onClick={() => setShow(!show)}>See less</Button>
                     <br />
                     <br />
                     <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>

@@ -98,7 +98,7 @@ function ProfileDashboard(props) {
         <Find
             client={props.client}
             querySearch = {querySearch}
-            currentAd={current}
+            currentProfileForm={current}
           />
           <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a>
           <a class="see-less-btn" onClick={() => refreshList()}>Clear Filtered List</a>

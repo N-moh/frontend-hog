@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Upload from './Upload';
 
 
 function Add(props) {
   const [disabled, cDisabled] = useState(false);
-  const[picture,cPicture]=useState('')
   const submitHandler = (e) => {
     e.preventDefault();
     cDisabled(true);
@@ -43,7 +41,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        picture,
+        e.target.picture.file,
         e.target.hired.checked
 
         
@@ -143,15 +141,16 @@ function Add(props) {
         />
         <br/>
         picture
+
+       
         <br/>
-        <Upload client={props.client} changePicture={cPicture}/>
-        {/*<input
+        <input
          
           type="file"
           //defaultValue={props.currentProfileForm?.picture || "https://i.imgur.com/WiuO4Qg.png"}
           name="picture"
           disabled={disabled}
-        /> */}
+         /> 
         <br/>
 
         {/* CV
