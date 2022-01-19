@@ -25,6 +25,7 @@ function App() {
   }
   const logout = () => {
     window.localStorage.removeItem("token");
+    changeRole("");
     changeToken(undefined);
   }
   return (

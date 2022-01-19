@@ -6,9 +6,7 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faGithub  } from '@fortawesome/free-brands-svg-icons'
-
-
-//import Moment from "react-moment";
+import Moment from "react-moment";
 
 
 
@@ -50,6 +48,8 @@ console.log(Profilecard)
                     <Card.Text>{props.portfolio}</Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
                     <Card.Text>Hired: {props.hired}</Card.Text>
+                    <Card.Text>Course: {props.course}</Card.Text>
+                    <Card.Text>Date:<Moment format="DD MMM yyyy" >{props.date}</Moment></Card.Text>
                     <Button class="see-less-btn" onClick={() => setShow(!show)}>See less</Button>
                     <br />
                     <br />
