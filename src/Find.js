@@ -12,6 +12,9 @@ function Find(props) {
             const searchParams = { 
                 sFullname: e.target.sFullname.value,
                 sEmail: e.target.sEmail.value,
+                sCourse: e.target.sCourse.value,
+                dateMin: e.target.dateMin.value,
+                dateMax: e.target.dateMax.value
             }
             props.querySearch(searchParams)
     };
@@ -24,7 +27,7 @@ function Find(props) {
         Fullname: <br />
         <input
             type="text"
-            defaultValue={props.currentAd?.sFullname}
+            defaultValue={props.currentProfileForm?.sFullname}
             name="sFullname"
             disabled={disabled}
             placeholder="Participant full name"
@@ -33,12 +36,35 @@ function Find(props) {
         Email: <br />
         <input
             type="text"
-            defaultValue={props.currentAd?.sEmail}
+            defaultValue={props.currentProfileForm?.sEmail}
             name="sEmail"
             disabled={disabled}
             placeholder="Participant Email"
         />
+        Course: <br />
+        <input
+            type="text"
+            defaultValue={props.currentProfileForm?.sCourse}
+            name="sCourse"
+            disabled={disabled}
+            placeholder="Participant Course"
+        />
         <br />
+        First date: <br />
+        <input
+            type="date"
+            defaultValue={props.currentProfileForm?.date}
+            name="dateMin"
+            disabled={disabled}
+        />
+        <br/>
+        Last date: <br />
+        <input
+            type="date"
+            defaultValue={props.currentProfileForm?.date}
+            name="dateMax"
+            disabled={disabled}
+        />
         <br/>
         <Button  size="sm" type="submit" disabled={disabled}>
             {" "}

@@ -28,7 +28,7 @@ console.log(Profilecard)
                  <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />
                     <Card.Text><h3> {props.fullname}</h3></Card.Text>
 
-                    <Card.Link href="mailto:">Email:{props.email}</Card.Link><br/>
+                    <Card.Link href="mailto:">{props.email}</Card.Link><br/>
                     
                    {/*} <ul class="flex flex-col items-center justify-center list-inline  list-unstyled  font-small mb-5">
       <li><a href="#"><i><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></i></a></li>
