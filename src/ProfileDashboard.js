@@ -42,7 +42,7 @@ function ProfileDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <Profilecard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
+          <Profilecard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
         </>
 
 

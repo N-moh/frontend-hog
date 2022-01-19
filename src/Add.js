@@ -25,6 +25,7 @@ function Add(props) {
         picture,
         e.target.hired.checked,
         e.target.course.value,
+        e.target.date.value
 
         
         //e.target.picture.value,
@@ -47,6 +48,7 @@ function Add(props) {
         picture,
         e.target.hired.checked,
         e.target.course.value,
+        e.target.date.value
 
         
         //e.target.picture.value,
@@ -173,6 +175,15 @@ function Add(props) {
        <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
        <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
         </select>
+        <br/>
+        Date
+        <br />
+        <input
+           type="date"
+          defaultValue={props.currentProfileForm?.date}
+          name="date"
+          disabled={disabled}
+       />
            
         
         <Button size="sm"type="submit" disabled={disabled}>
