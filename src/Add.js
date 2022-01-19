@@ -22,8 +22,9 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        e.target.picture.file,
-        e.target.hired.checked
+        picture,
+        e.target.hired.checked,
+        e.target.course.value,
 
         
         //e.target.picture.value,
@@ -44,7 +45,8 @@ function Add(props) {
         e.target.github.value,
         e.target.portfolio.value,
         picture,
-        e.target.hired.checked
+        e.target.hired.checked,
+        e.target.course.value,
 
         
         //e.target.picture.value,
@@ -163,6 +165,15 @@ function Add(props) {
           name="cv"
           disabled={disabled}
         /><br/> */}
+        <br/>
+        Course
+        
+        <select id= "course" name="course">
+       <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
+       <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
+       <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
+        </select>
+           
         
         <Button size="sm"type="submit" disabled={disabled}>
           {" "}
