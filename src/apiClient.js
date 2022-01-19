@@ -5,7 +5,8 @@ const url = "http://localhost:3001/";
 
 
 export class ApiClient {
-  constructor(tokenProvider,logoutHandler){
+  constructor(tokenProvider,newRole,logoutHandler){
+    this.role=newRole;
     this.tokenProvider = tokenProvider;
     this.logoutHandler = logoutHandler;
   }
