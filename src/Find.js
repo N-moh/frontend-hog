@@ -41,14 +41,13 @@ function Find(props) {
             disabled={disabled}
             placeholder="Participant Email"
         />
+        <br />
         Course: <br />
-        <input
-            type="text"
-            defaultValue={props.currentProfileForm?.sCourse}
-            name="sCourse"
-            disabled={disabled}
-            placeholder="Participant Course"
-        />
+        <select id="sCourse" name="sCourse">
+            <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
+            <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
+            <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
+        </select>
         <br />
         First date: <br />
         <input
