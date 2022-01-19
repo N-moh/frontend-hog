@@ -42,7 +42,7 @@ function ProfileDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <Profilecard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
+          <Profilecard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
         </>
 
 
@@ -51,7 +51,7 @@ function ProfileDashboard(props) {
   }
     return (
 
-      <main>
+       <main>
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Admin Dashboard</h5>
@@ -98,7 +98,7 @@ function ProfileDashboard(props) {
         <Find
             client={props.client}
             querySearch = {querySearch}
-            currentAd={current}
+            currentProfileForm={current}
           />
           <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a>
           <a class="see-less-btn" onClick={() => refreshList()}>Clear Filtered List</a>
@@ -107,7 +107,7 @@ function ProfileDashboard(props) {
         </Col>
         </Row>
         </Container>
-    </main>
+     </main>
 
   );
   

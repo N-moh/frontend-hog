@@ -3,6 +3,10 @@ import  Card  from "react-bootstrap/Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App'
 import Button from "react-bootstrap/Button";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faGithub  } from '@fortawesome/free-brands-svg-icons'
+
 
 //import Moment from "react-moment";
 
@@ -18,7 +22,7 @@ console.log(Profilecard)
             
             
 
-            <Card id="main"className=" m-5 Card "  style={{ width: '20rem' }} >
+            <Card id="main"className="Card "  style={{ width: '18rem' }} >
                 <Card.Body >
 
                  <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />
@@ -45,8 +49,8 @@ console.log(Profilecard)
                     <Card.Text>{props.github}</Card.Text>
                     <Card.Text>{props.portfolio}</Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
-
-                    <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
+                    <Card.Text>Hired: {props.hired}</Card.Text>
+                    <Button class="see-less-btn" onClick={() => setShow(!show)}>See less</Button>
                     <br />
                     <br />
                     <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>

@@ -40,7 +40,7 @@ function Find(props) {
         />
         <br />
         <br/>
-        <Button className="buttonSubmit" size="sm" type="submit" disabled={disabled}>
+        <Button  size="sm" type="submit" disabled={disabled}>
             {" "}
             Search{" "}
         </Button>

@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import Button from 'react-bootstrap/Button';
 //import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+//import UserProfile from "./UserProfile";
 //import { NavLink } from "react-bootstrap";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
   }
   return (
     <>
-    <Navbar bg="primary" variant="dark">
+    <Navbar bg="secondary alert" variant="dark">
    <Navbar.Brand><h2>The Developer Academy</h2></Navbar.Brand>
    {/*<Navbar.Toggle aria-controls="basic-nav-nav"></Navbar.Toggle>
    <Navbar.Collapse className="nav-link">
@@ -42,6 +43,7 @@ function App() {
      </Nav>
   </Navbar.Collapse>*/}
  </Navbar>
+ {/*<UserProfile/>*/}
     
       {token ? (
         <ProfileDashboard client={client}  logout={logout}/>
