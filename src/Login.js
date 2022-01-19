@@ -13,7 +13,7 @@ function Login(props) {
     .then( (response) => {
       cDisabled(false);
       console.log(response.data.token);
-      props.loggedIn(response.data.token);
+      props.loggedIn(response.data.token,response.data.role);
       console.log(response.data.token);
     })
     .catch((error) => {
