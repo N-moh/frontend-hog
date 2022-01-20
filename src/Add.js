@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Upload from './Upload';
@@ -81,74 +82,95 @@ function Add(props) {
           name="profileFormDate"
           disabled={disabled}
         />*/}
-        Full Name: <br />
-        <input
+        <Form.Group>
+       <Form.Label >Full Name:</Form.Label> <br />
+        <Form.Control
          required
           type="text"
           defaultValue={props.currentProfileForm?.fullname || ""}
           name="fullname"
           disabled={disabled}
         />
+        </Form.Group>
         <br />
-        Email <br />
-        <input
+        <Form.Group>
+        <Form.Label>Email </Form.Label><br />
+        <Form.Control
+        
            required
           type="text"
           defaultValue={props.currentProfileForm?.email}
           name="email"
-          disabled={disabled}
-        /><br/>
-        Bio
+          disabled={disabled}>
+        </Form.Control>
+          </Form.Group>
+        <br/>
+
+        <Form.Group>
+        <Form.Label>Bio</Form.Label>
+      
         <br />
-        <input
+
+        <Form.Control
           
           type="text"
           defaultValue={props.currentProfileForm?.bio}
           name="bio"
-          disabled={disabled}
-          /><br/>
-          
+          disabled={disabled}>
+            </Form.Control>
+          <br/>
+          </Form.Group>
+          <Form.Group>
+        <Form.Label>
+        
         Linkedin
-        <br />
-        <input
+        </Form.Label>
+        
+        <Form.Control
            type="text"
           defaultValue={props.currentProfileForm?.linkedin}
           name="linkedin"
-          disabled={disabled}
-        /><br/>
-       Github
-        <br />
-        <input
+          disabled={disabled}>
+            </Form.Control>
+          </Form.Group>
+        
+        <Form.Group>
+        <Form.Label>
+       Github</Form.Label>
+        
+        <Form.Control
+    
            type="text"
           defaultValue={props.currentProfileForm?.github}
           name="github"
-          disabled={disabled}
-        /><br/>
-        Portfolio
-        <br/>
-        <input
-         
+          disabled={disabled}>
+        </Form.Control>
+        </Form.Group>
+        
+        <Form.Group>
+        <Form.Label> Portfolio</Form.Label>
+       
+         <Form.Control
           type="text"
           defaultValue={props.currentProfileForm?.portfolio}
           name="portfolio"
           disabled={disabled}
-        />
-        <br/>
-
-        <br/>
-        Hired
-        <br/>
-        <input
+        >
+          </Form.Control>
+        </Form.Group>
+        <Form.Group>
+        <Form.Label>Hired</Form.Label>
+        
+        
+        <Form.Check
           
-          type="checkbox"
+          type="switch"
           defaultChecked={props.currentProfileForm?.hired}
           name="hired"
-          disabled={disabled}
-        />
-        <br/>
-        picture
-        <br/>
-        <Upload client={props.client} changePicture={cPicture}/>
+          disabled={disabled}/>  
+          </Form.Group>  
+
+        
         {/*<input
          
           type="file"
@@ -156,7 +178,7 @@ function Add(props) {
           name="picture"
           disabled={disabled}
         /> */}
-        <br/>
+        
 
         {/* CV
         <br/>
@@ -167,23 +189,31 @@ function Add(props) {
           name="cv"
           disabled={disabled}
         /><br/> */}
-        <br/>
-        Course
+        <Form.Group>
+        <Form.Label>Course</Form.Label>
         
-        <select id= "course" name="course">
+        <Form.Select
+        id= "course" name="course">
        <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
        <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
        <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
-        </select>
-        <br/>
-        Date
-        <br />
-        <input
+        </Form.Select>
+        </Form.Group>
+
+        <Form.Group>
+        <Form.Label>Date</Form.Label>
+         <Form.Control
            type="date"
           defaultValue={props.currentProfileForm?.date}
           name="date"
-          disabled={disabled}
-       />
+          disabled={disabled}>
+         </Form.Control>
+       </Form.Group>
+       <Form.Group>
+        <Form.Label>Picture</Form.Label>
+        <Upload client={props.client} changePicture={cPicture}/>
+        </Form.Group>
+        <br/>
            
         
         <Button size="sm"type="submit" disabled={disabled}>

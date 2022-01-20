@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App'
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faGithub  } from '@fortawesome/free-brands-svg-icons'
+import { faPortrait ,faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import { faGithub ,faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import Moment from "react-moment";
 
 
@@ -26,7 +26,7 @@ console.log(Profilecard)
                  <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow"  src={props.picture} alt="" />
                     <Card.Text><h3> {props.fullname}</h3></Card.Text>
 
-                    <Card.Link href="mailto:">{props.email}</Card.Link><br/>
+                    <Card.Link href={"mailto:"+props.email}> <FontAwesomeIcon icon = {faEnvelope}></FontAwesomeIcon></Card.Link>
                     
                    {/*} <ul class="flex flex-col items-center justify-center list-inline  list-unstyled  font-small mb-5">
       <li><a href="#"><i><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></i></a></li>
@@ -35,24 +35,22 @@ console.log(Profilecard)
       <li><a href="#"><i></i><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></a></li>
     </ul>*/}
     <Card.Link target="_blank" href={props.github}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
-    <Card.Link target="_blank" href={props.linkedin}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
-    <Card.Link href="#"><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
-    <Card.Link href="#"><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link><br/>
+    <Card.Link target="_blank" href={props.linkedin}><FontAwesomeIcon icon = {faLinkedin}></FontAwesomeIcon></Card.Link>
+    <Card.Link target="_blank" href= {props.portfolio}><FontAwesomeIcon icon = {faPortrait}></FontAwesomeIcon></Card.Link>
+    <br/>
 
     
                     { show?
                     <>
                     <Card.Text>Bio: {props.bio} </Card.Text>
-                    <Card.Text>{props.linkedin}</Card.Text>
-                    <Card.Text>{props.github}</Card.Text>
-                    <Card.Text>{props.portfolio}</Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
                     <Card.Text>Hired: {props.hired}</Card.Text>
                     <Card.Text>Course: {props.course}</Card.Text>
                     <Card.Text>Date:<Moment format="DD MMM yyyy" >{props.date}</Moment></Card.Text>
-                    <Button class="see-less-btn" onClick={() => setShow(!show)}>See less</Button>
+                    <Button class="see-less-btn" size="sm" onClick={() => setShow(!show)}>See less</Button>
                     <br />
-                    <br />
+                    <br/>
+                    
                     <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
                     <Button variant="danger" size="sm" onClick={() => props.removeProfileForm(props.id)}> remove</Button>
                     </> 
