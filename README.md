@@ -1,4 +1,4 @@
 # Best Hog Group
 
-Done by Audrey,Naaz,Nusrath and Tom 
+Done by Audrey, Naaz, Nusrath and Tom 
 
