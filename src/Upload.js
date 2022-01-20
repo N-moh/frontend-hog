@@ -1,5 +1,3 @@
-
-
 import 'bootstrap/dist/css/bootstrap.css';
 import React,{ useState } from 'react';
 import { Table, Button, Form, Row, Col } from "react-bootstrap";

@@ -3,7 +3,7 @@ import ProfileDashboard from "./ProfileDashboard";
 import { ApiClient } from "./apiClient";
 import Login from "./Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import Showevents from "./Showevents";
+import EmpDashboard from "./EmpDashboard";
 //import Button from 'react-bootstrap/Button';
 //import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -20,11 +20,13 @@ function App() {
   );
   const login = (newToken,newRole) => {
     window.localStorage.setItem("token",newToken);
+    window.localStorage.setItem("role",newRole);
     changeToken(newToken);
     changeRole(newRole);
   }
   const logout = () => {
     window.localStorage.removeItem("token");
+    window.localStorage.removeItem("role");
     changeRole("");
     changeToken(undefined);
   }
@@ -51,13 +53,12 @@ function App() {
     
       {token ? (
         
-        role=="participant" ? <ProfileDashboard client={client}  logout={logout}/> : <h1>Not Participant</h1>
+        role=="admin" ? <ProfileDashboard client={client}  logout={logout}/> : <EmpDashboard client={client}  logout={logout}/>
       ) : (
         <Login loggedIn={(token,role) => login(token,role)} client={client} logout={logout}/>
       )
       }
-      {/*<Showevents/>*/}
-    </>
+         </>
   );
 }
 export default App;
