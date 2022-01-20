@@ -20,11 +20,13 @@ function App() {
   );
   const login = (newToken,newRole) => {
     window.localStorage.setItem("token",newToken);
+    window.localStorage.setItem("role",newRole)
     changeToken(newToken);
     changeRole(newRole);
   }
   const logout = () => {
     window.localStorage.removeItem("token");
+    window.localStorage.removeItem("role")
     changeRole("");
     changeToken(undefined);
   }
@@ -51,7 +53,7 @@ function App() {
     
       {token ? (
         
-        role=="participant" ? <ProfileDashboard client={client}  logout={logout}/> : <h1>Not Participant</h1>
+        role=="admin" ? <ProfileDashboard client={client}  logout={logout}/> : <h1>Not Participant</h1>
       ) : (
         <Login loggedIn={(token,role) => login(token,role)} client={client} logout={logout}/>
       )
