@@ -35,10 +35,8 @@ export default function Upload(props) {
     <>
     
       <Form onSubmit={upload}>
-      <h1>Upload</h1>
-      
       <input type="file" name="myFile" onChange={changeHandler} ></input>
-      <Button onClick={submitFile} >Upload</Button>
+      <Button size="sm" onClick={submitFile} >Upload</Button>
       </Form>
     
     </>
