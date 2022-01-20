@@ -23,10 +23,12 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
+        e.target.admincomments.value,
         picture,
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
+
 
         
         //e.target.picture.value,
@@ -46,6 +48,7 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
+        e.target.admincomments.value,
         picture,
         e.target.hired.checked,
         e.target.course.value,
@@ -99,7 +102,7 @@ function Add(props) {
         
            required
           type="text"
-          defaultValue={props.currentProfileForm?.email}
+          defaultValue={props.currentProfileForm?.email || ""}
           name="email"
           disabled={disabled}>
         </Form.Control>
@@ -114,7 +117,7 @@ function Add(props) {
         <Form.Control
           
           type="text"
-          defaultValue={props.currentProfileForm?.bio}
+          defaultValue={props.currentProfileForm?.bio || ""}
           name="bio"
           disabled={disabled}>
             </Form.Control>
@@ -128,7 +131,7 @@ function Add(props) {
         
         <Form.Control
            type="text"
-          defaultValue={props.currentProfileForm?.linkedin}
+          defaultValue={props.currentProfileForm?.linkedin || ""}
           name="linkedin"
           disabled={disabled}>
             </Form.Control>
@@ -141,7 +144,7 @@ function Add(props) {
         <Form.Control
     
            type="text"
-          defaultValue={props.currentProfileForm?.github}
+          defaultValue={props.currentProfileForm?.github || ""}
           name="github"
           disabled={disabled}>
         </Form.Control>
@@ -152,8 +155,19 @@ function Add(props) {
        
          <Form.Control
           type="text"
-          defaultValue={props.currentProfileForm?.portfolio}
+          defaultValue={props.currentProfileForm?.portfolio || ""}
           name="portfolio"
+          disabled={disabled}
+        >
+          </Form.Control>
+        </Form.Group>
+        <Form.Group>
+        <Form.Label>Admin Comments </Form.Label>
+       
+         <Form.Control
+          type="text"
+          defaultValue={props.currentProfileForm?.admincomments || ""}
+          name="admincomments"
           disabled={disabled}
         >
           </Form.Control>
@@ -165,7 +179,7 @@ function Add(props) {
         <Form.Check
           
           type="switch"
-          defaultChecked={props.currentProfileForm?.hired}
+          defaultChecked={props.currentProfileForm?.hired || ""}
           name="hired"
           disabled={disabled}/>  
           </Form.Group>  

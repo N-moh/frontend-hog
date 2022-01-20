@@ -1,4 +1,4 @@
-# Ads App Starter Code
+# Best Hog Group
 
-Starter code for the Mongo Session
+Done by Audrey, Naaz, Nusrath and Tom 
 
