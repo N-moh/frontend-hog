@@ -50,7 +50,8 @@ function App() {
  {/*<UserProfile/>*/}
     
       {token ? (
-        <ProfileDashboard client={client}  logout={logout}/>
+        
+        role=="participant" ? <ProfileDashboard client={client}  logout={logout}/> : <h1>Not Participant</h1>
       ) : (
         <Login loggedIn={(token,role) => login(token,role)} client={client} logout={logout}/>
       )

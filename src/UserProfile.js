@@ -120,7 +120,7 @@ render(){
 }
 }
 
-const mapStatetoProps=(state)=>{
+ {/*mapStatetoProps=(state)=>{
     return{
         user_id:state.user.userDetails.userid,
         fullname:state.user.userDetails.fullname,
@@ -128,7 +128,7 @@ const mapStatetoProps=(state)=>{
        profileImage: state.user.profileImage,
        
     }
-   }
+   }*/}
    
    
 

@@ -23,7 +23,7 @@ console.log(Profilecard)
             <Card id="main"className="Card "  style={{ width: '18rem' }} >
                 <Card.Body >
 
-                 <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow" src={props.picture} alt="" />
+                 <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow"  src={props.picture} alt="" />
                     <Card.Text><h3> {props.fullname}</h3></Card.Text>
 
                     <Card.Link href="mailto:">{props.email}</Card.Link><br/>
