@@ -51,15 +51,13 @@ function ProfileDashboard(props) {
   }
     return (
 
-       <main>
+      <main>
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Admin Dashboard</h5>
             <h3>logged in as {}</h3>
           </Row>
-
     
-
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
       <Button  onClick={props.logout}>
           {" "}
@@ -69,26 +67,21 @@ function ProfileDashboard(props) {
 
         <br />
         <div class="row row-cols-1 row-cols-md-3 g-4">
-       {buildcards()}
+          {buildcards()}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
       <Col xs={6}>
       { show?
       <>
-
-
-
       <Add
         client={props.client}
         refreshList={() => {
           refreshList();
           cCurrent(undefined);
         }}
-
         currentProfileForm={current}
         logout={props.logout}
       />
-
       <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
       </>
       : <a class="buttonShowAdd2" onClick={() => setShow(!show)}>Add post</a> }
@@ -108,7 +101,7 @@ function ProfileDashboard(props) {
         </Col>
         </Row>
         </Container>
-     </main>
+      </main>
 
   );
   

@@ -6,14 +6,14 @@ function Login(props) {
   const [disabled, cDisabled] = useState(false);
   const submitHandler = (e) => {
   console.log("submitted");
-   e.preventDefault();
-   cDisabled(true);
-   props.client
+  e.preventDefault();
+  cDisabled(true);
+  props.client
     .login(e.target.username.value,e.target.password.value)
     .then( (response) => {
       cDisabled(false);
       console.log(response.data.token);
-      props.loggedIn(response.data.token,response.data.role);
+      props.loggedIn(response.data.token,response.data.role,response.data.username);
       console.log(response.data.token);
     })
     .catch((error) => {
