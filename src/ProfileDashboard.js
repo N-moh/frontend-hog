@@ -55,6 +55,7 @@ function ProfileDashboard(props) {
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Admin Dashboard</h5>
+            <h3>logged in as {props.username}</h3>
           </Row>
 
     

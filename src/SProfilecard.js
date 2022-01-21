@@ -49,7 +49,7 @@ function SProfilecard(props){
                     <Card.Text>{props.cv}</Card.Text>
                     <Card.Text>Hired: {props.hired}</Card.Text>
                     <Card.Text>Course: {props.course}</Card.Text>
-                    <Card.Text>Date:<Moment format="DD MMM yyyy" >{props.date}</Moment></Card.Text>
+                    <Card.Text>Start date:<Moment format="DD MMM yyyy" >{props.date}</Moment></Card.Text>
                     <Button class="see-less-btn" onClick={() => setShow(!show)}>See less</Button>
                     <br />
                     <br />
