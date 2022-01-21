@@ -30,15 +30,17 @@ export default function Upload(props) {
   
 
   return (
-   
-    
     <>
-    
-      <Form onSubmit={upload}>
+    <Row>
+      <Form.Group onSubmit={upload}>
+      <Col md="auto">
       <Form.Control type="file" name="myFile" onChange={changeHandler} ></Form.Control>
+      </Col>
+      <Col md="auto">
       <Button size="sm" onClick={submitFile} >Upload</Button>
-      </Form>
-    
+      </Col>
+      </Form.Group>
+    </Row>
     </>
   )
 

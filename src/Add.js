@@ -3,6 +3,8 @@ import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Upload from './Upload';
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 
 function Add(props) {
@@ -76,115 +78,105 @@ function Add(props) {
     {props.currentProfileForm? "Update Profile" : "Add Profile"}
     </div>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-       <br />
+      <br />
       <Form onSubmit={(e) => submitHandler(e)} id="addForm">
-        {/*Date: <br />
-        <input
-          type="text"
-          defaultValue={props.currentProfileForm?.date}
-          name="profileFormDate"
-          disabled={disabled}
-        />*/}
+        <Row className="g-2">
+          <Col md>
         <Form.Group>
-       <Form.Label >Full Name:</Form.Label> <br />
+      <Form.Label >Full Name:</Form.Label> <br />
         <Form.Control
-         required
+          required
           type="text"
           defaultValue={props.currentProfileForm?.fullname || ""}
           name="fullname"
           disabled={disabled}
+          placeholder="Your full name here"
         />
         </Form.Group>
-        <br />
+        </Col>
+        <Col md>
         <Form.Group>
         <Form.Label>Email </Form.Label><br />
         <Form.Control
-        
-           required
+          required
           type="text"
           defaultValue={props.currentProfileForm?.email || ""}
           name="email"
-          disabled={disabled}>
+          disabled={disabled}
+          placeholder="Type your email here">
         </Form.Control>
-          </Form.Group>
-        <br/>
-
+        </Form.Group>
+        </Col>
+        </Row>
+        <Row>
         <Form.Group>
         <Form.Label>Bio</Form.Label>
-      
-        <br />
-
         <Form.Control
-          
           type="text"
           defaultValue={props.currentProfileForm?.bio || ""}
           name="bio"
           disabled={disabled}>
-            </Form.Control>
-          <br/>
-          </Form.Group>
-          <Form.Group>
-        <Form.Label>
-        
-        Linkedin
-        </Form.Label>
-        
+        </Form.Control>
+        </Form.Group>
+        </Row>
+        <Row>
+          <Col md>
+        <Form.Group>
+        <Form.Label>Linkedin</Form.Label>
         <Form.Control
-           type="text"
+          type="text"
           defaultValue={props.currentProfileForm?.linkedin || ""}
           name="linkedin"
           disabled={disabled}>
             </Form.Control>
           </Form.Group>
-        
+          </Col>
+          <Col md>
         <Form.Group>
-        <Form.Label>
-       Github</Form.Label>
-        
+        <Form.Label>Github</Form.Label>
         <Form.Control
-    
-           type="text"
+          type="text"
           defaultValue={props.currentProfileForm?.github || ""}
           name="github"
           disabled={disabled}>
         </Form.Control>
         </Form.Group>
-        
+        </Col>
+        </Row>
+        <Row>
         <Form.Group>
         <Form.Label> Portfolio</Form.Label>
-       
-         <Form.Control
+        <Form.Control
           type="text"
           defaultValue={props.currentProfileForm?.portfolio || ""}
           name="portfolio"
-          disabled={disabled}
-        >
-          </Form.Control>
+          disabled={disabled}>
+        </Form.Control>
         </Form.Group>
+        </Row>
+        <Row>
+          <Col md>
         <Form.Group>
         <Form.Label>Admin Comments </Form.Label>
-       
-         <Form.Control
+        <Form.Control
           type="text"
           defaultValue={props.currentProfileForm?.admincomments || ""}
           name="admincomments"
-          disabled={disabled}
-        >
-          </Form.Control>
+          disabled={disabled}>
+        </Form.Control>
         </Form.Group>
+        </Col>
+        <Col md>
         <Form.Group>
         <Form.Label>Hired</Form.Label>
-        
-        
         <Form.Check
-          
           type="switch"
           defaultChecked={props.currentProfileForm?.hired || ""}
           name="hired"
           disabled={disabled}/>  
-          </Form.Group>  
-
-        
+        </Form.Group>
+        </Col>
+        </Row>
         {/*<input
          
           type="file"
@@ -203,33 +195,35 @@ function Add(props) {
           name="cv"
           disabled={disabled}
         /><br/> */}
+        <Row>
+          <Col md>
         <Form.Group>
         <Form.Label>Course</Form.Label>
-        
         <Form.Select
         id= "course" name="course">
-       <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
-       <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
-       <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
+        <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
+        <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
+        <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
         </Form.Select>
         </Form.Group>
-
+        </Col>
+        <Col md>
         <Form.Group>
         <Form.Label>Date</Form.Label>
-         <Form.Control
-           type="date"
+        <Form.Control
+          type="date"
           defaultValue={props.currentProfileForm?.date}
           name="date"
           disabled={disabled}>
-         </Form.Control>
-       </Form.Group>
-       <Form.Group>
+        </Form.Control>
+        </Form.Group>
+        </Col>
+        </Row>
+        <Form.Group>
         <Form.Label>Picture</Form.Label>
         <Upload client={props.client} changePicture={cPicture}/>
         </Form.Group>
         <br/>
-           
-        
         <Button size="sm"type="submit" disabled={disabled}>
           {" "}
           Submit{" "}
