@@ -55,7 +55,7 @@ function EmpDashboard(props) {
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Employer Dashboard</h5>
-            <h3>logged in as {props.username}</h3>
+            <h4>logged in as {props.username}</h4>
           </Row>
 
     

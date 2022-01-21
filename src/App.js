@@ -44,14 +44,13 @@ function App() {
         <Nav>
         </Nav>
       </Navbar.Collapse>
-      <h4>Hello {username}!</h4>
-      <h4>You are {role}</h4>
+      
     </Navbar>
     
       {token ? (
-        role=="admin" ? <ProfileDashboard client={client}  logout={logout}/> : <EmpDashboard client={client}  logout={logout}/>
+        role=="admin" ? <ProfileDashboard client={client} username={username} logout={logout}/> : <EmpDashboard client={client} username={username}  logout={logout}/>
       ) : (
-        <Login loggedIn={(token,role) => login(token,role)} client={client} logout={logout}/>
+        <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
       )
       }
     </>
