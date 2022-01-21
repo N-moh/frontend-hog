@@ -4,10 +4,8 @@ import { ApiClient } from "./apiClient";
 import Login from "./Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EmpDashboard from "./EmpDashboard";
-//import Button from 'react-bootstrap/Button';
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-//import UserProfile from "./UserProfile";
 import { NavLink } from "react-bootstrap";
 
 function App() {
@@ -40,34 +38,23 @@ function App() {
   return (
     <>
     <Navbar bg="secondary alert" variant="dark">
-   <Navbar.Brand><h2>The Developer Academy</h2></Navbar.Brand>
-   <Navbar.Toggle aria-controls="basic-nav-nav"></Navbar.Toggle>
-   <Navbar.Collapse className="nav-link">
-     <Nav>
-     <NavLink className="nav-link" to="/">
-         Home
-       </NavLink>
-       <NavLink className="nav-link" to="/EmpDashboard">
-         Employers 
-       </NavLink>
-       <NavLink className="nav-link" to="/Login">
-         Login
-       </NavLink>
-       
-     </Nav>
-  </Navbar.Collapse>
-
- </Navbar>
- {/*<UserProfile/>*/}
+      <Navbar.Brand><h2>The Developer Academy</h2></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-nav-nav"></Navbar.Toggle>
+      <Navbar.Collapse className="nav-link">
+        <Nav>
+        </Nav>
+      </Navbar.Collapse>
+      <h4>Hello {username}!</h4>
+      <h4>You are {role}</h4>
+    </Navbar>
     
       {token ? (
-        
         role=="admin" ? <ProfileDashboard client={client}  logout={logout}/> : <EmpDashboard client={client}  logout={logout}/>
       ) : (
         <Login loggedIn={(token,role) => login(token,role)} client={client} logout={logout}/>
       )
       }
-         </>
+    </>
   );
 }
 export default App;

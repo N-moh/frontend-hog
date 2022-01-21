@@ -192,3 +192,7 @@ table{
   background-color: lightgray;
   margin: .5rem;
 }
+.cardImg{
+  height:180px;
+  width:180px;
+}

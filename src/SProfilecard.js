@@ -20,26 +20,15 @@ function SProfilecard(props){
             
             
 
-            <Card id="main"className="Card "  style={{ width: '18rem' }} >
+            <Card id="main"className="Card "  style={{ width: '14rem' }} >
                 <Card.Body >
-
-                 <Card.Img  className="mh-10 mw-10 img-thumbnail hover-shadow"  src={props.picture} alt="" />
-                    <Card.Text><h3> {props.fullname}</h3></Card.Text>
-
-                    <Card.Link href="mailto:">{props.email}</Card.Link><br/>
-                    
-                   {/*} <ul class="flex flex-col items-center justify-center list-inline  list-unstyled  font-small mb-5">
-      <li><a href="#"><i><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></i></a></li>
-      <li><a href="#"><i><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></i></a></li>
-      <li><a href="#"><i ></i><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></a></li>
-      <li><a href="#"><i></i><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></a></li>
-    </ul>*/}
-    <Card.Link target="_blank" href={props.github}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
-    <Card.Link target="_blank" href={props.linkedin}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
-    <Card.Link href="#"><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
-    <Card.Link href="#"><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link><br/>
-
-    
+                <Card.Img  className="mh-10 mw-10 hover-shadow cardImg"  src={props.picture} alt="" />
+                <Card.Text><h3> {props.fullname}</h3></Card.Text>
+                <Card.Link href="mailto:">{props.email}</Card.Link><br/>
+                <Card.Link target="_blank" href={props.github}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
+                <Card.Link target="_blank" href={props.linkedin}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
+                <Card.Link href="#"><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
+                <Card.Link href="#"><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link><br/>
                     { show?
                     <>
                     <Card.Text>Bio: {props.bio} </Card.Text>
@@ -55,18 +44,10 @@ function SProfilecard(props){
                     <br />
                     </> 
                     :<a class="see-more-btn" onClick={() => setShow(!show)}>See more</a>
-
-
                     }
                     <br />
-
                 </Card.Body>
             </Card>
-
-     
-         
-      
-        
         </>
     )
 
