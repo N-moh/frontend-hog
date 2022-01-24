@@ -29,7 +29,7 @@ import { Container } from "react-bootstrap";
     refreshList();
   }, []);
   
-  function buildcards() {
+ {/*} function buildcards() {
     return profileForms.map((current) => {
       return (
         <>
@@ -39,7 +39,7 @@ import { Container } from "react-bootstrap";
 
       );
     });
-  }
+  }*/}
     return (
 
       <main>
@@ -58,10 +58,10 @@ import { Container } from "react-bootstrap";
 
         <br />
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          {buildcards()}
+         {/* {buildcards()}*/}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
-      
+      <ParticipantCard />
       
       
       
@@ -76,6 +76,7 @@ import { Container } from "react-bootstrap";
         logout={props.logout}
       />
       </Col>
+    
       </Row>
       </Container>
       </main>
