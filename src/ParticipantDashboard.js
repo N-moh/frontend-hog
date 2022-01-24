@@ -4,7 +4,7 @@ import './App'
 import Add from "./Add";
 import Find from "./Find";
 import Button from 'react-bootstrap/Button';
-import Profilecard from './Profilecard';
+import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -33,7 +33,7 @@ import { Container } from "react-bootstrap";
     return profileForms.map((current) => {
       return (
         <>
-          <Profilecard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></Profilecard>
+          <ParticipantCard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
         </>
 
 
@@ -61,6 +61,10 @@ import { Container } from "react-bootstrap";
           {buildcards()}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
+      
+      
+      
+      
       <Col xs={6}>
       <Add
         client={props.client}
