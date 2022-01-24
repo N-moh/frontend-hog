@@ -19,7 +19,8 @@ function Add(props) {
       result = props.client.updateProfileForm(
         props.currentProfileForm._id,
        
-        e.target.fullname.value,
+        e.target.firstname.value,
+        e.target.lastname.value,
         e.target.email.value,
         e.target.bio.value,
         e.target.linkedin.value,
@@ -44,7 +45,8 @@ function Add(props) {
       console.log()
       result = props.client.addProfileForm(
          
-        e.target.fullname.value,
+        e.target.firstname.value,
+        e.target.lastname.value,
         e.target.email.value,
         e.target.bio.value,
         e.target.linkedin.value,
@@ -80,20 +82,35 @@ function Add(props) {
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
       <br />
       <Form onSubmit={(e) => submitHandler(e)} id="addForm">
-        <Row className="g-2">
-          <Col md>
-        <Form.Group>
-      <Form.Label >Full Name:</Form.Label> <br />
+     <Row className="g-2">
+      <Col md>
+      <Form.Group>
+      <Form.Label >First Name:</Form.Label> <br />
         <Form.Control
           required
           type="text"
-          defaultValue={props.currentProfileForm?.fullname || ""}
-          name="fullname"
+          defaultValue={props.currentProfileForm?.firstname || ""}
+          name="firstname"
           disabled={disabled}
-          placeholder="Your full name here"
+          placeholder="Your last name here"
         />
         </Form.Group>
         </Col>
+        <Col md>
+        <Form.Group>
+        <Form.Label >Last Name:</Form.Label> <br />
+        <Form.Control
+          required
+          type="text"
+          defaultValue={props.currentProfileForm?.lastname || ""}
+          name="lastname"
+          disabled={disabled}
+          placeholder="Your last name here"
+        />
+        </Form.Group>
+        </Col>
+        </Row>
+        <Row>
         <Col md>
         <Form.Group>
         <Form.Label>Email </Form.Label><br />

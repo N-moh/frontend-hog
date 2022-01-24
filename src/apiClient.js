@@ -52,9 +52,9 @@ export class ApiClient {
 
 
 
-  addProfileForm(fullname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
+  addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
     
-    return this.authenticatedCall("post", url, {fullname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date});
+    return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date});
   }
    postImage(name,file){
     const formData = new FormData();
@@ -66,8 +66,8 @@ export class ApiClient {
   removeProfileForm(id) {
     return this.authenticatedCall("delete", `${url}${id}`);
   }
-  updateProfileForm(id,fullname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
-    return this.authenticatedCall("put", `${url}${id}`, { fullname,email,bio,linkedin,github,portfolio,admincomments, picture,hired,course,date});
+  updateProfileForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
+    return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,admincomments, picture,hired,course,date});
   }
   queryResult(searchParams){
     return this.authenticatedCall("post", `${url}tda/search`, searchParams)

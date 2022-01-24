@@ -19,7 +19,8 @@ console.log(Profilecard)
             <Card id="main"className="Card "  style={{ width: '14rem'}} >
                 <Card.Body >
                 <Card.Img  className="mh-10 mw-10 cardImg hover-shadow"  src={props.picture} alt="" />
-                    <Card.Text><h3> {props.fullname}</h3></Card.Text>
+                    <Card.Text><h3> {props.firstname} {props.lastname}</h3></Card.Text>
+                    <Card.Text>Bio: {props.bio} </Card.Text>
                     <Card.Link href={"mailto:"+props.email}> <FontAwesomeIcon icon = {faEnvelope}></FontAwesomeIcon></Card.Link>
                     <Card.Link target="_blank" href={props.github}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
                     <Card.Link target="_blank" href={props.linkedin}><FontAwesomeIcon icon = {faLinkedin}></FontAwesomeIcon></Card.Link>
@@ -27,7 +28,6 @@ console.log(Profilecard)
                     <br/>
                     { show?
                     <>
-                    <Card.Text>Bio: {props.bio} </Card.Text>
                     <Card.Text>{props.cv}</Card.Text>
                     <Card.Text>Hired: {props.hired}</Card.Text>
                     <Card.Text>Course: {props.course}</Card.Text>
