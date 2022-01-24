@@ -11,7 +11,7 @@ import { Container } from "react-bootstrap";
 
 
 //mport Table from 'react-bootstrap/Table';
-function ProfileDashboard(props) {
+function AdminDashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
   const [current, cCurrent] = useState(undefined);
   const [show,setShow]=useState(false)
@@ -106,4 +106,4 @@ function ProfileDashboard(props) {
   );
   
 }
-export default ProfileDashboard;
+export default AdminDashboard;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProfileDashboard from "./ProfileDashboard";
+import AdminDashboard from "./AdminDashboard";
 import { ApiClient } from "./apiClient";
 import Login from "./Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -49,10 +49,9 @@ function App() {
       </Navbar.Collapse>
       
     </Navbar>
-    <ValidationTextFields />
-    
+       
       {token ? (
-        role=="admin" ? <ProfileDashboard client={client} username={username} logout={logout}/> : <EmpDashboard client={client} username={username}  logout={logout}/>
+        role=="admin" ? <AdminDashboard client={client} username={username} logout={logout}/> : <EmpDashboard client={client} username={username}  logout={logout}/>
       ) : (
         <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
       )
