@@ -7,6 +7,9 @@ import EmpDashboard from "./EmpDashboard";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-bootstrap";
+import ValidationTextFields from "./ValidationTextFields";
+
+
 
 function App() {
   const [token,changeToken] = useState(window.localStorage.getItem("token"))
@@ -46,14 +49,17 @@ function App() {
       </Navbar.Collapse>
       
     </Navbar>
+    <ValidationTextFields />
     
       {token ? (
         role=="admin" ? <ProfileDashboard client={client} username={username} logout={logout}/> : <EmpDashboard client={client} username={username}  logout={logout}/>
       ) : (
         <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
       )
+
       }
     </>
   );
+  
 }
 export default App;
