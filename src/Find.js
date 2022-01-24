@@ -12,7 +12,8 @@ function Find(props) {
     const submitHandler = (e) => {
         e.preventDefault();
             const searchParams = { 
-                sFullname: e.target.sFullname.value,
+                sFirstname: e.target.sFirstname.value,
+                sLastname: e.target.sLastname.value,
                 sEmail: e.target.sEmail.value,
                 sCourse: e.target.sCourse.value,
                 dateMin: e.target.dateMin.value,
@@ -26,15 +27,25 @@ function Find(props) {
         <h5 className="findHeader">Searching for...</h5>
         <br />
         <Form className="form2" onSubmit={(e) => submitHandler(e)} id="findForm">
-            <Form.Group>
-        <Form.Label>Fullname: </Form.Label>
+        <Form.Group>
+        <Form.Label>First name: </Form.Label>
         <Form.Control
             type="text"
-            defaultValue={props.currentProfileForm?.sFullname}
-            name="sFullname"
+            defaultValue={props.currentProfileForm?.sFirstname}
+            name="sFirstname"
             disabled={disabled}
-            placeholder="Participant full name"></Form.Control>
-    
+            placeholder="Participant's first name">
+        </Form.Control>
+        </Form.Group>
+        <Form.Group>
+        <Form.Label>Last name: </Form.Label>
+        <Form.Control
+            type="text"
+            defaultValue={props.currentProfileForm?.sLastname}
+            name="sLastname"
+            disabled={disabled}
+            placeholder="Participant's last name">
+        </Form.Control>
         </Form.Group>
         <Form.Group>
             <Form.Label>Email:</Form.Label>
