@@ -92,7 +92,7 @@ function Add(props) {
           defaultValue={props.currentProfileForm?.firstname || ""}
           name="firstname"
           disabled={disabled}
-          placeholder="Your last name here"
+          placeholder="Your first name here"
         />
         </Form.Group>
         </Col>
