@@ -62,9 +62,6 @@ import { Container } from "react-bootstrap";
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
       <ParticipantCard />
-      
-      
-      
       <Col xs={6}>
       <Add
         client={props.client}
