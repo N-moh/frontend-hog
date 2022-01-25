@@ -8,11 +8,11 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-bootstrap";
 import ValidationTextFields from "./ValidationTextFields";
-import ParticipantDashboard from "./ParticipantDashboard";
+//import ParticipantDashboard from "./ParticipantDashboard";
 
 
 
-function App() {
+function SApp() {
   const [token,changeToken] = useState(window.localStorage.getItem("token"))
   const [role,changeRole] = useState(window.localStorage.getItem("role"))
   const [username,changeUsername] = useState(window.localStorage.getItem("username"))
@@ -53,7 +53,7 @@ function App() {
     
        
       {token ? (
-        role=="admin" ? <AdminDashboard client={client} username={username} logout={logout}/> : <ParticipantDashboard client={client} username={username}  logout={logout}/>
+        role=="admin" ? <AdminDashboard client={client} username={username} logout={logout}/> : <EmpDashboard client={client} username={username}  logout={logout}/>
       ) : (
         <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
       )
@@ -63,4 +63,4 @@ function App() {
   );
   
 }
-export default App;
+export default SApp;
