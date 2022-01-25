@@ -42,7 +42,7 @@ function EmpDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <SProfilecard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} ></SProfilecard>
+          <SProfilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} ></SProfilecard>
         </>
 
 
@@ -51,7 +51,7 @@ function EmpDashboard(props) {
   }
     return (
 
-       <main>
+      <main>
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Employer Dashboard</h5>
@@ -69,7 +69,7 @@ function EmpDashboard(props) {
 
         <br />
         <div class="row row-cols-1 row-cols-md-3 g-4">
-       {buildcards()}
+        {buildcards()}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
       
@@ -89,7 +89,7 @@ function EmpDashboard(props) {
         </Col>
         </Row>
         </Container>
-     </main>
+      </main>
 
   );
   

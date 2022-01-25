@@ -53,7 +53,13 @@ function SApp() {
     
        
       {token ? (
-        role=="admin" ? <AdminDashboard client={client} username={username} logout={logout}/> : <EmpDashboard client={client} username={username}  logout={logout}/>
+        role=="admin" 
+        ? <AdminDashboard client={client} username={username} logout={logout}/> 
+        : role=="employer"
+        ? <EmpDashboard client={client} username={username}  logout={logout}/>
+        : role=="participant"
+        ? <ParticipantDashboard client={client} username={username}  logout={logout}/>
+        : <></>
       ) : (
         <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
       )
