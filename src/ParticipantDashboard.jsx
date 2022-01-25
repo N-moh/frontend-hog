@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App'
+import './SApp'
 import Add from "./Add";
 import Find from "./Find";
 import Button from 'react-bootstrap/Button';
