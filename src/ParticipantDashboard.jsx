@@ -24,12 +24,13 @@ import { Container } from "react-bootstrap";
     cCurrent(e[0])
    }
   };
+  
 
   useEffect(() => {
     refreshList();
   }, []);
   
- {/*} function buildcards() {
+ function buildcards() {
     return profileForms.map((current) => {
       return (
         <>
@@ -39,7 +40,7 @@ import { Container } from "react-bootstrap";
 
       );
     });
-  }*/}
+  }
     return (
 
       <main>
@@ -61,7 +62,7 @@ import { Container } from "react-bootstrap";
          {/* {buildcards()}*/}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
-      <ParticipantCard  />
+      {/*<ParticipantCard  id={current.id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}/>*/}
       <Col xs={6}>
       <ParticipantAdd
       username={props.username}
