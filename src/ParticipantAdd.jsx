@@ -16,9 +16,8 @@ function ParticipantAdd(props) {
     let result;
     if (props.currentProfileForm) {
       console.log("update")
-      result = props.client.updateProfileForm(
+      result = props.client.updateParticipantForm(
         props.currentProfileForm._id,
-       
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,
@@ -26,25 +25,14 @@ function ParticipantAdd(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        
         picture,
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
-
-
-        
-        //e.target.picture.value,
-
-        //e.target.cv.value,
-
-        //e.target.covidPass.checked
-        
       );
     } else {
       console.log()
-      result = props.client.addProfileForm(
-         
+      result = props.client.addParticipantForm(
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,
@@ -52,16 +40,11 @@ function ParticipantAdd(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        
         picture,
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
-
-        
-        //e.target.picture.value,
-       // e.target.cv.value
-        );
+      );
     }
     result
       .then(() => {
