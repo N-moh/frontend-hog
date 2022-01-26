@@ -4,7 +4,7 @@ import './SApp'
 import Add from "./Add";
 import Find from "./Find";
 import Button from 'react-bootstrap/Button';
-import SProfilecard from './SProfilecard';
+import EmpProfilecard from './EmpProfilecard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -42,7 +42,7 @@ function EmpDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <SProfilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} ></SProfilecard>
+          <EmpProfilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} ></EmpProfilecard>
         </>
 
 
