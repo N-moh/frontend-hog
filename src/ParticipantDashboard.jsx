@@ -61,9 +61,10 @@ import { Container } from "react-bootstrap";
          {/* {buildcards()}*/}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
-      <ParticipantCard />
+      <ParticipantCard  />
       <Col xs={6}>
       <ParticipantAdd
+      username={props.username}
         client={props.client}
         refreshList={() => {
           refreshList();

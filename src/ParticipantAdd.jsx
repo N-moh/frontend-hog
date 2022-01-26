@@ -17,7 +17,9 @@ function ParticipantAdd(props) {
     if (props.currentProfileForm) {
       console.log("update")
       result = props.client.updateParticipantForm(
+        
         props.currentProfileForm._id,
+        props.username,
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,
@@ -33,6 +35,7 @@ function ParticipantAdd(props) {
     } else {
       console.log()
       result = props.client.addParticipantForm(
+        props.username,
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,

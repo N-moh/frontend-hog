@@ -46,12 +46,12 @@ export class ApiClient {
   getProfileForm() {
     return this.authenticatedCall("get", url);
   }
-  addParticipantForm(firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
+  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
     
-    return this.authenticatedCall("post", `${url}participant`, {firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
+    return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
   }
-  updateParticipantForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
-    return this.authenticatedCall("put", `${url}participant/${id}`, {firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
+  updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
+    return this.authenticatedCall("put", `${url}participant/${id}`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
   }
   addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
     
