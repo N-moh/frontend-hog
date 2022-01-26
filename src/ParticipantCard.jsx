@@ -44,7 +44,6 @@ export default function ParticipantCard(props) {
       <CardHeader
         avatar={
           <Avatar aria-label="">
-            D
           </Avatar>
         }
         action={
@@ -54,7 +53,7 @@ export default function ParticipantCard(props) {
         }
         title="Name"
         
-        subheader="September 14, 2016"
+        subheader="The Developer Academy Student"
       />{props.firstname} {props.lastname}
       <Moment format="DD MMM yyyy" >{props.date}</Moment>
       
@@ -105,9 +104,6 @@ export default function ParticipantCard(props) {
           
           <Typography paragraph>
             Course: {props.course}
-    
-            
-            
           </Typography>
           
           

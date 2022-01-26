@@ -38,10 +38,10 @@ import { Container } from "react-bootstrap";
         </>
       );
     });
-  }*/}
+  }
     return (
-
       <main>
+        {refreshList()}
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Participants Dashboard</h5>
@@ -49,18 +49,16 @@ import { Container } from "react-bootstrap";
           </Row>
     
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
-      <Button  onClick={props.logout}>
+        <Button  onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
       </div>
-
-        <br />
-          {buildcards()}
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-        </div>
+      <br />
       <Row className="bodyRow mx-auto text-center mt-2">
-      {/*<ParticipantCard  id={current.id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}/>*/}
+      <Col xs={6}>
+        {buildcards()}
+      </Col>
       <Col xs={6}>
       <ParticipantAdd
         username={props.username}
