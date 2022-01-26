@@ -33,7 +33,6 @@ function SApp() {
     changeToken(newToken);
     changeRole(newRole);
     changePost(newPost);
-    
     changeUsername(newUsername);
   }
   const logout = () => {
