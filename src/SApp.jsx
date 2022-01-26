@@ -12,7 +12,7 @@ import ParticipantDashboard from "./ParticipantDashboard";
 
 
 
-function App() {
+function SApp() {
   const [token,changeToken] = useState(window.localStorage.getItem("token"))
   const [role,changeRole] = useState(window.localStorage.getItem("role"))
   const [username,changeUsername] = useState(window.localStorage.getItem("username"))
@@ -48,12 +48,15 @@ function App() {
         <Nav>
         </Nav>
       </Navbar.Collapse>
-      
     </Navbar>
-    
-       
       {token ? (
-        role=="admin" ? <AdminDashboard client={client} username={username} logout={logout}/> : <ParticipantDashboard client={client} username={username}  logout={logout}/>
+        role=="admin" 
+        ? <AdminDashboard client={client} username={username} logout={logout}/> 
+        : role=="employer"
+        ? <EmpDashboard client={client} username={username}  logout={logout}/>
+        : role=="participant"
+        ? <ParticipantDashboard client={client} username={username}  logout={logout}/>
+        : <></>
       ) : (
         <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
       )
@@ -63,4 +66,4 @@ function App() {
   );
   
 }
-export default App;
+export default SApp;

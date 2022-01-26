@@ -13,8 +13,8 @@ import Typography from '@mui/material/Typography';
 //import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-//import Moment from "react-moment";
-//import EmailIcon from '@mui/icons-material/Email';
+import Moment from "react-moment";
+import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PersonIcon from '@mui/icons-material/Person';
@@ -52,16 +52,19 @@ export default function ParticipantCard(props) {
             <MoreVertIcon />
           </IconButton>
         }
-        title={props.fullname}
+        title="Name"
+        
         subheader="September 14, 2016"
-      />
+      />{props.firstname} {props.lastname}
+      <Moment format="DD MMM yyyy" >{props.date}</Moment>
+      
       <CardMedia
 
         component="img"
-        
+        src={props.picture} 
         height="194"
         alt="profile pic" 
-        src="https://i.imgur.com/2idphdd.png"
+        //src="https://i.imgur.com/2idphdd.png"
         
       />
       <CardContent>
@@ -75,16 +78,16 @@ export default function ParticipantCard(props) {
 
       <CardActions disableSpacing>
 
-       {/*} <IconButton aria-label="Email">
+        <IconButton aria-label="Email" href={"mailto:"+props.email} >
           <EmailIcon />
-    </IconButton>*/}
-        <IconButton aria-label="Github">
+    </IconButton>
+        <IconButton aria-label="Github" target="_blank" href={props.github}>
           <GitHubIcon />
         </IconButton>
-        <IconButton aria-label="Linkedin">
+        <IconButton aria-label="Linkedin"  target="_blank" href={props.linkedin}>
           <LinkedInIcon/>
         </IconButton>
-        <IconButton aria-label="Portfolio">
+        <IconButton aria-label="Portfolio" target="_blank" href= {props.portfolio}>  
           <PersonIcon />
         </IconButton>
 
@@ -103,10 +106,10 @@ export default function ParticipantCard(props) {
           
           
           <Typography paragraph>
-             Course: {props.course}
+            Course: {props.course}
             Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
             medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
-            occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
+            
             
           </Typography>
           

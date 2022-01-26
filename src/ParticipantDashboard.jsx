@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App'
-import Add from "./Add";
-import Find from "./Find";
+import './SApp'
+import ParticipantAdd from "./ParticipantAdd";
+//import Find from "./Find";
 import Button from 'react-bootstrap/Button';
 import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
@@ -61,12 +61,10 @@ import { Container } from "react-bootstrap";
          {/* {buildcards()}*/}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
-      <ParticipantCard />
-      
-      
-      
+      <ParticipantCard  />
       <Col xs={6}>
-      <Add
+      <ParticipantAdd
+      username={props.username}
         client={props.client}
         refreshList={() => {
           refreshList();
