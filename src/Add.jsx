@@ -18,7 +18,6 @@ function Add(props) {
       console.log("update")
       result = props.client.updateProfileForm(
         props.currentProfileForm._id,
-       
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,
@@ -31,20 +30,10 @@ function Add(props) {
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
-
-
-        
-        //e.target.picture.value,
-
-        //e.target.cv.value,
-
-        //e.target.covidPass.checked
-        
       );
     } else {
       console.log()
       result = props.client.addProfileForm(
-         
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,
@@ -57,10 +46,6 @@ function Add(props) {
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
-
-        
-        //e.target.picture.value,
-       // e.target.cv.value
         );
     }
     result
@@ -74,6 +59,7 @@ function Add(props) {
         cDisabled(false);
       });
   };
+
   return (
     <>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
@@ -82,7 +68,7 @@ function Add(props) {
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
       <br />
       <Form onSubmit={(e) => submitHandler(e)} id="addForm">
-     <Row className="g-2">
+      <Row className="g-2">
       <Col md>
       <Form.Group>
       <Form.Label >First Name:</Form.Label> <br />
@@ -194,26 +180,16 @@ function Add(props) {
         </Form.Group>
         </Col>
         </Row>
-        {/*<input
-         
-          type="file"
-          //defaultValue={props.currentProfileForm?.picture || "https://i.imgur.com/WiuO4Qg.png"}
-          name="picture"
-          disabled={disabled}
-        /> */}
-        
-
         {/* CV
         <br/>
         <input
-         
           type="file"
           defaultValue={props.currentProfileForm?.cv}
           name="cv"
           disabled={disabled}
         /><br/> */}
         <Row>
-          <Col md>
+        <Col md>
         <Form.Group>
         <Form.Label>Course</Form.Label>
         <Form.Select
