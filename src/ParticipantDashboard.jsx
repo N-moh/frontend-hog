@@ -19,12 +19,14 @@ import { Container } from "react-bootstrap";
   const refreshList = () => {
   props.client.getProfileForm(id).then((response) => cProfileForms([response.data]));
   };
+
   const updateProfileForm= (id) => {
     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
     if(e.length>0){
     cCurrent(e[0])
     }
   };
+
   useEffect(() => {
     refreshList();
   }, []);
@@ -36,7 +38,7 @@ import { Container } from "react-bootstrap";
         </>
       );
     });
-  }
+  }*/}
     return (
 
       <main>
