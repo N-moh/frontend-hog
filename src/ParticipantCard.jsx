@@ -70,9 +70,7 @@ export default function ParticipantCard(props) {
       <CardContent>
         <Typography    variant="body2" color="text.secondary">
         {props.bio} 
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          
         </Typography>
       </CardContent>
 
@@ -107,8 +105,7 @@ export default function ParticipantCard(props) {
           
           <Typography paragraph>
             Course: {props.course}
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-            medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
+    
             
             
           </Typography>
