@@ -19,9 +19,9 @@ function SApp() {
   const [username,changeUsername] = useState(window.localStorage.getItem("username"))
   const client = new ApiClient(
     token,
-    post,
     role,
     username,
+    post,
     () => logout()
   );
   const login = (newToken,newRole,newUsername,newPost) => {
@@ -32,19 +32,19 @@ function SApp() {
     window.localStorage.setItem("post",newPost);
     changeToken(newToken);
     changeRole(newRole);
-    changePost(newPost);
-    
     changeUsername(newUsername);
+    changePost(newPost);
   }
   const logout = () => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("role");
     window.localStorage.removeItem("username");
     window.localStorage.removeItem("post");
-    changeRole("");
-    changePost("");
+    
     changeToken(undefined);
+    changeRole("");
     changeUsername("");
+    changePost("");
 
   }
   return (

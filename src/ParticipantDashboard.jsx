@@ -31,17 +31,21 @@ import { Container } from "react-bootstrap";
     refreshList();
   }, []);
   
- {/*const buildcard=(id) ={
-    let i= profileForms.filterOne((current) => {
+  const buildcard = () => {
+    return profileForms.slice(-1).map((current,i) => {
       return (
         <>
+
+       <Row key={i}>
           <ParticipantCard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
+          
+        </Row>
         </>
 
 
       );
     });
-  }*/}
+  }
     return (
 
       <main>
@@ -59,9 +63,11 @@ import { Container } from "react-bootstrap";
       </div>
 
         <br />
+        <Row>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-         {/* {buildcards()}*/}
+          {buildcard()}
         </div>
+        </Row>
       <Row className="bodyRow mx-auto text-center mt-2">
       {/*<ParticipantCard  id={current.id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}/>*/}
       <Col xs={6}>

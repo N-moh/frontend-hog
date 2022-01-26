@@ -45,8 +45,9 @@ export class ApiClient {
     return this.authenticatedCall("get", url);
   }
 
-  getProfileForm() {
-    return this.authenticatedCall("get", `${url}${id}` );
+  getParticipantForm(id) {
+    console.log(id)
+    return this.authenticatedCall("get", `${url}participant/${id}` );
   }
   addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
     
