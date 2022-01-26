@@ -17,6 +17,7 @@ import { Container } from "react-bootstrap";
   const refreshList = () => {
   props.client.getProfileForms().then((response) => cProfileForms(response.data));
   };
+
  
   const updateProfileForm= (id) => {
     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
@@ -24,14 +25,14 @@ import { Container } from "react-bootstrap";
     cCurrent(e[0])
    }
   };
-  
+
 
   useEffect(() => {
     refreshList();
   }, []);
   
- function buildcards() {
-    return profileForms.map((current) => {
+ {/*const buildcard=(id) ={
+    let i= profileForms.filterOne((current) => {
       return (
         <>
           <ParticipantCard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
@@ -40,7 +41,7 @@ import { Container } from "react-bootstrap";
 
       );
     });
-  }
+  }*/}
     return (
 
       <main>
