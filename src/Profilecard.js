@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import  Card  from "react-bootstrap/Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './SApp'
+//import './SApp'
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPortrait ,faEnvelope} from '@fortawesome/free-solid-svg-icons';

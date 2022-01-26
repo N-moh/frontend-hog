@@ -8,7 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-bootstrap";
 import ValidationTextFields from "./ValidationTextFields";
-//import ParticipantDashboard from "./ParticipantDashboard";
+import ParticipantDashboard from "./ParticipantDashboard";
 
 
 

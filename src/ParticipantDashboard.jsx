@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SApp'
-import Add from "./Add";
-import Find from "./Find";
+import ParticipantAdd from "./ParticipantAdd";
+//import Find from "./Find";
 import Button from 'react-bootstrap/Button';
 import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
@@ -66,7 +66,7 @@ import { Container } from "react-bootstrap";
       
       
       <Col xs={6}>
-      <Add
+      <ParticipantAdd
         client={props.client}
         refreshList={() => {
           refreshList();
