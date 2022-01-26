@@ -14,27 +14,35 @@ import ParticipantDashboard from "./ParticipantDashboard";
 
 function SApp() {
   const [token,changeToken] = useState(window.localStorage.getItem("token"))
+  const [post,changePost]= useState(window.localStorage.getItem("post"))
   const [role,changeRole] = useState(window.localStorage.getItem("role"))
   const [username,changeUsername] = useState(window.localStorage.getItem("username"))
   const client = new ApiClient(
     token,
+    post,
     role,
     username,
     () => logout()
   );
-  const login = (newToken,newRole,newUsername) => {
+  const login = (newToken,newRole,newUsername,newPost) => {
+
     window.localStorage.setItem("token",newToken);
     window.localStorage.setItem("role",newRole);
     window.localStorage.setItem("username",newUsername);
+    window.localStorage.setItem("post",newPost);
     changeToken(newToken);
     changeRole(newRole);
+    changePost(newPost);
+    
     changeUsername(newUsername);
   }
   const logout = () => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("role");
     window.localStorage.removeItem("username");
+    window.localStorage.removeItem("post");
     changeRole("");
+    changePost("");
     changeToken(undefined);
     changeUsername("");
 
@@ -55,10 +63,10 @@ function SApp() {
         : role=="employer"
         ? <EmpDashboard client={client} username={username}  logout={logout}/>
         : role=="participant"
-        ? <ParticipantDashboard client={client} username={username}  logout={logout}/>
+        ? <ParticipantDashboard client={client} post={post} username={username}  logout={logout}/>
         : <></>
       ) : (
-        <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
+        <Login loggedIn={(token,role,username,post) => login(token,role,username,post)} client={client} logout={logout}/>
       )
 
       }
