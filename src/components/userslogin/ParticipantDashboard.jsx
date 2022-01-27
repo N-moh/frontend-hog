@@ -33,7 +33,7 @@ import { Container } from "react-bootstrap";
     return profileForms.map((current) => {
       return (
         <>
-          <ParticipantCard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
+          <ParticipantCard id={current._id} firstname={current.firstname} lastname={current.lastname}  email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
         </>
       );
     });

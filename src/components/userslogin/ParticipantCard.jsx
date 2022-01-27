@@ -52,10 +52,11 @@ export default function ParticipantCard(props) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="name"
         
-        subheader="The Developer Academy Student"
-      />{props.firstname} {props.lastname}
+        title={`${props.firstname} ${props.lastname}`}
+        
+        subheader={`${props.email}`}
+      />
       <Moment format="DD MMM yyyy" >{props.date}</Moment>
       
       <CardMedia
@@ -105,7 +106,14 @@ export default function ParticipantCard(props) {
           
           <Typography paragraph>
             Course: {props.course}
+            
           </Typography>
+
+          <Typography paragraph>
+            Hired: {props.hired}
+            
+          </Typography>
+
           
           <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
         </CardContent>
