@@ -21,15 +21,7 @@ function EmpDashboard(props) {
   const refreshList = () => {
     props.client.getProfileForms().then((response) => cProfileForms(response.data));
   };
-//   const removeProfileForm = (id) => {
-//     props.client.removeProfileForm(id).then(() => refreshList());
-//   };
-//   const updateProfileForm= (id) => {
-//     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
-//    if(e.length>0){
-//     cCurrent(e[0])
-//    }
-//   };
+
   const querySearch = (searchParams) => {
     props.client.queryResult(searchParams).then((response) => cProfileForms(response.data))
   }
@@ -44,8 +36,6 @@ function EmpDashboard(props) {
         <>
           <EmpProfilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} ></EmpProfilecard>
         </>
-
-
       );
     });
   }
@@ -57,23 +47,17 @@ function EmpDashboard(props) {
             <h5 className="header-title">Employer Dashboard</h5>
             <h4>logged in as {props.username}</h4>
           </Row>
-
-    
-
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
       <Button  onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
       </div>
-
         <br />
         <div class="row row-cols-1 row-cols-md-3 g-4">
         {buildcards()}
         </div>
       <Row className="bodyRow mx-auto text-center mt-2">
-      
-    
       <Col>
         { show2? 
           <>
