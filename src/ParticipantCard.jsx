@@ -8,6 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 //import FavoriteIcon from '@mui/icons-material/Favorite';
 //import ShareIcon from '@mui/icons-material/Share';
@@ -41,7 +42,7 @@ export default function ParticipantCard(props) {
 
   return (
     <Card  className="Card "sx={{ maxWidth: 345 }}>
-      <CardHeader
+      <CardHeader 
         avatar={
           <Avatar aria-label="">
           </Avatar>
@@ -51,7 +52,7 @@ export default function ParticipantCard(props) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Name"
+        title="name"
         
         subheader="The Developer Academy Student"
       />{props.firstname} {props.lastname}
@@ -106,7 +107,7 @@ export default function ParticipantCard(props) {
             Course: {props.course}
           </Typography>
           
-          
+          <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
         </CardContent>
       </Collapse>
     </Card>

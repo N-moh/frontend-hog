@@ -14,34 +14,41 @@ import { Container } from "react-bootstrap";
   function ParticipantDashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
   const [current, cCurrent] = useState(undefined);
-
-  const id = props.post
   const refreshList = () => {
-  props.client.getProfileForm(id).then((response) => cProfileForms([response.data]));
+  props.client.getProfileForms().then((response) => cProfileForms(response.data));
   };
 
+ 
   const updateProfileForm= (id) => {
     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
-    if(e.length>0){
+   if(e.length>0){
     cCurrent(e[0])
-    }
+   }
   };
+
 
   useEffect(() => {
     refreshList();
   }, []);
-  function buildcards() {
-    return profileForms.map((current) => {
+  
+  const buildcard = () => {
+    return profileForms.slice(-1).map((current,i) => {
       return (
         <>
+
+       <Row key={i}>
           <ParticipantCard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
+          
+        </Row>
         </>
+
+
       );
     });
   }
     return (
+
       <main>
-        {refreshList()}
         <Container className="contentContainer">
           <Row className="headerRow">
             <h5 className="header-title">Participants Dashboard</h5>
@@ -49,19 +56,23 @@ import { Container } from "react-bootstrap";
           </Row>
     
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
-        <Button  onClick={props.logout}>
+      <Button  onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
       </div>
-      <br />
+
+        <br />
+        <Row>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {buildcard()}
+        </div>
+        </Row>
       <Row className="bodyRow mx-auto text-center mt-2">
-      <Col xs={6}>
-        {buildcards()}
-      </Col>
+      {/*<ParticipantCard  id={current.id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}/>*/}
       <Col xs={6}>
       <ParticipantAdd
-        username={props.username}
+      username={props.username}
         client={props.client}
         refreshList={() => {
           refreshList();

@@ -12,7 +12,9 @@ function Login(props) {
     .login(e.target.username.value,e.target.password.value)
     .then( (response) => {
       cDisabled(false);
+      console.log(response.data);
       props.loggedIn(response.data.token,response.data.role,response.data.username,response.data.profileForm);
+      console.log(response.data.profileForm);
     })
     .catch((error) => {
         alert("an error occurred, please try again")
