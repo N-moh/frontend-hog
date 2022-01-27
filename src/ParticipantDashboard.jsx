@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SApp'
 import ParticipantAdd from "./ParticipantAdd";
-//import Find from "./Find";
 import Button from 'react-bootstrap/Button';
 import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
@@ -40,29 +39,25 @@ import { Container } from "react-bootstrap";
       );
     });
   }
-
-      <main>
-        <Container className="contentContainer">
-          <Row className="headerRow">
-            <h5 className="header-title">Participants Dashboard</h5>
-            <h4>Logged in as {props.username}</h4>
-          </Row>
-    
+    <main>
+      <Container className="contentContainer">
+        <Row className="headerRow">
+          <h5 className="header-title">Participants Dashboard</h5>
+          <h4>Logged in as {props.username}</h4>
+        </Row>
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
       <Button  onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
       </div>
-
-        <br />
-        <Row>
+      <br />
+      <Row>
         <div class="row row-cols-1 row-cols-md-3 g-4">
           {buildcards()}
         </div>
-        </Row>
+      </Row>
       <Row className="bodyRow mx-auto text-center mt-2">
-      {/*<ParticipantCard  id={current.id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}/>*/}
       <Col xs={6}>
       <ParticipantAdd
       username={props.username}
@@ -75,10 +70,9 @@ import { Container } from "react-bootstrap";
         logout={props.logout}
       />
       </Col>
-    
       </Row>
       </Container>
-      </main>
+    </main>
 
   );
   
