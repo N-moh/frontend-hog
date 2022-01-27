@@ -26,7 +26,6 @@ function Add(props) {
         e.target.github.value,
         e.target.portfolio.value,
         e.target.admincomments.value,
-        picture,
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
@@ -42,7 +41,6 @@ function Add(props) {
         e.target.github.value,
         e.target.portfolio.value,
         e.target.admincomments.value,
-        picture,
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
@@ -203,10 +201,6 @@ function Add(props) {
         </Form.Group>
         </Col>
         </Row>
-        <Form.Group>
-        <Form.Label>Picture</Form.Label>
-        <Upload client={props.client} changePicture={cPicture}/>
-        </Form.Group>
         <br/>
         <Button size="sm"type="submit" disabled={disabled}>
           {" "}

@@ -41,36 +41,55 @@ export class ApiClient {
   login(username,password) {
     return this.apiCall("post",url + "auth/",{username: username, password:password});
   }
-  getProfileForms() {
-    return this.authenticatedCall("get", url);
+  // Employer functions
+
+  // Gets NEETs for Employers
+  getEmployerForms() {
+    return this.authenticatedCall("get", `${url}employer`)
   }
 
-  getProfileForm(id) {
-    return this.authenticatedCall("get", `${url}profile/${id}`);
-  }
-  
+  // Participant functions
+
+  // Add for Participants
   addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) { 
     return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
   }
+  // Update for participants
   updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
     return this.authenticatedCall("put", `${url}participant/${id}`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
   }
-  addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
-    
-    return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date});
+  // Fetches card for participants
+  getProfileForm(id) {
+    return this.authenticatedCall("get", `${url}profile/${id}`);
   }
+  // Uploads image for participants
   postImage(name,file){
     const formData = new FormData();
     formData.append('name',name);
     formData.append('myFile',file);
     return this.authenticatedCall("post",`${url}user/new`,formData)
   }
+
+  // Admin functions
+
+  // Fetches all participants
+  getProfileForms() {
+    return this.authenticatedCall("get", url);
+  }
+  // Add for Admins
+  addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date) {
+    return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date});
+  }
+  // Remove posts for Admins
   removeProfileForm(id) {
     return this.authenticatedCall("delete", `${url}${id}`);
   }
-  updateProfileForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
-    return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,admincomments, picture,hired,course,date});
+  // Update for Admins
+  updateProfileForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date) {
+    return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date});
   }
+
+  //Find functionality
   queryResult(searchParams){
     return this.authenticatedCall("post", `${url}tda/search`, searchParams)
   }

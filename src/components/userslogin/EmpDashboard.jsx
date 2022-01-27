@@ -19,7 +19,7 @@ function EmpDashboard(props) {
   const [ashow2,asetShow2]=useState(false)
 
   const refreshList = () => {
-    props.client.getProfileForms().then((response) => cProfileForms(response.data));
+    props.client.getEmployerForms().then((response) => cProfileForms(response.data));
   };
 
   const querySearch = (searchParams) => {
