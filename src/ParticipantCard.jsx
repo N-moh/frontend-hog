@@ -45,7 +45,6 @@ export default function ParticipantCard(props) {
       <CardHeader 
         avatar={
           <Avatar aria-label="">
-            D
           </Avatar>
         }
         action={
@@ -55,10 +54,8 @@ export default function ParticipantCard(props) {
         }
         title="name"
         
-        subheader="September 14, 2016"
-        
-      />
-      <h4>{props.firstname} {props.lastname}</h4>
+        subheader="The Developer Academy Student"
+      />{props.firstname} {props.lastname}
       <Moment format="DD MMM yyyy" >{props.date}</Moment>
       
       <CardMedia
@@ -108,9 +105,6 @@ export default function ParticipantCard(props) {
           
           <Typography paragraph>
             Course: {props.course}
-    
-            
-            
           </Typography>
           
           <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>

@@ -45,12 +45,11 @@ export class ApiClient {
     return this.authenticatedCall("get", url);
   }
 
-  getParticipantForm(id) {
-    console.log(id)
-    return this.authenticatedCall("get", `${url}participant/${id}` );
+  getProfileForm(id) {
+    return this.authenticatedCall("get", `${url}profile/${id}`);
   }
-  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
-    
+  
+  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) { 
     return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
   }
   updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
