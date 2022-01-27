@@ -53,12 +53,10 @@ import { Container } from "react-bootstrap";
         </Button>
       </div>
       <br />
-      <Row>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          {buildcards()}
-        </div>
-      </Row>
       <Row className="bodyRow mx-auto text-center mt-2">
+      <Col xs={6}>
+        {buildcards()}
+      </Col>
       <Col xs={6}>
       <ParticipantAdd
       username={props.username}
