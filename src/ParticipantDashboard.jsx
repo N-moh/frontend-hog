@@ -14,16 +14,16 @@ import { Container } from "react-bootstrap";
   function ParticipantDashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
   const [current, cCurrent] = useState(undefined);
+  const id = props.post
   const refreshList = () => {
-  props.client.getProfileForms().then((response) => cProfileForms(response.data));
+  props.client.getProfileForm(id).then((response) => cProfileForms([response.data]));
   };
 
- 
   const updateProfileForm= (id) => {
     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
-   if(e.length>0){
+    if(e.length>0){
     cCurrent(e[0])
-   }
+    }
   };
 
 
@@ -31,22 +31,15 @@ import { Container } from "react-bootstrap";
     refreshList();
   }, []);
   
-  const buildcard = () => {
-    return profileForms.slice(-1).map((current,i) => {
+  function buildcards() {
+    return profileForms.map((current) => {
       return (
         <>
-
-       <Row key={i}>
           <ParticipantCard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
-          
-        </Row>
         </>
-
-
       );
     });
   }
-    return (
 
       <main>
         <Container className="contentContainer">
@@ -65,7 +58,7 @@ import { Container } from "react-bootstrap";
         <br />
         <Row>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          {buildcard()}
+          {buildcards()}
         </div>
         </Row>
       <Row className="bodyRow mx-auto text-center mt-2">
