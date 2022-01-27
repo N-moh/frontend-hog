@@ -39,6 +39,7 @@ import { Container } from "react-bootstrap";
       );
     });
   }
+  return (
     <main>
       <Container className="contentContainer">
         <Row className="headerRow">
