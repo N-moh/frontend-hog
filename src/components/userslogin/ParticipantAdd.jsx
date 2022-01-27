@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Upload from './Upload';
+import Upload from '../../Upload';
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
 
-function Add(props) {
+function ParticipantAdd(props) {
   const [disabled, cDisabled] = useState(false);
   const[picture,cPicture]=useState('')
   const submitHandler = (e) => {
@@ -16,9 +16,10 @@ function Add(props) {
     let result;
     if (props.currentProfileForm) {
       console.log("update")
-      result = props.client.updateProfileForm(
+      result = props.client.updateParticipantForm(
+        
         props.currentProfileForm._id,
-       
+        props.username,
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,
@@ -26,25 +27,15 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        e.target.admincomments.value,
         picture,
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
-
-
-        
-        //e.target.picture.value,
-
-        //e.target.cv.value,
-
-        //e.target.covidPass.checked
-        
       );
     } else {
       console.log()
-      result = props.client.addProfileForm(
-         
+      result = props.client.addParticipantForm(
+        props.username,
         e.target.firstname.value,
         e.target.lastname.value,
         e.target.email.value,
@@ -52,16 +43,11 @@ function Add(props) {
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
-        e.target.admincomments.value,
         picture,
         e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
-
-        
-        //e.target.picture.value,
-       // e.target.cv.value
-        );
+      );
     }
     result
       .then(() => {
@@ -172,17 +158,7 @@ function Add(props) {
         </Form.Group>
         </Row>
         <Row>
-          <Col md>
-        <Form.Group>
-        <Form.Label>Admin Comments </Form.Label>
-        <Form.Control
-          type="text"
-          defaultValue={props.currentProfileForm?.admincomments || ""}
-          name="admincomments"
-          disabled={disabled}>
-        </Form.Control>
-        </Form.Group>
-        </Col>
+          
         <Col md>
         <Form.Group>
         <Form.Label>Hired</Form.Label>
@@ -194,13 +170,6 @@ function Add(props) {
         </Form.Group>
         </Col>
         </Row>
-        {/*<input
-         
-          type="file"
-          //defaultValue={props.currentProfileForm?.picture || "https://i.imgur.com/WiuO4Qg.png"}
-          name="picture"
-          disabled={disabled}
-        /> */}
         
 
         {/* CV
@@ -250,4 +219,4 @@ function Add(props) {
     </>
   );
 }
-export default Add;
+export default ParticipantAdd;

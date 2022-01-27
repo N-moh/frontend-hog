@@ -6,37 +6,45 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import EmpDashboard from "./EmpDashboard";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-bootstrap";
-import ValidationTextFields from "./ValidationTextFields";
+//import { NavLink } from "react-bootstrap";
+//import ValidationTextFields from "../../ValidationTextFields";
 import ParticipantDashboard from "./ParticipantDashboard";
 
 
 
-function App() {
+function SApp() {
   const [token,changeToken] = useState(window.localStorage.getItem("token"))
+  const [post,changePost]= useState(window.localStorage.getItem("post"))
   const [role,changeRole] = useState(window.localStorage.getItem("role"))
   const [username,changeUsername] = useState(window.localStorage.getItem("username"))
   const client = new ApiClient(
     token,
     role,
     username,
+    post,
     () => logout()
   );
-  const login = (newToken,newRole,newUsername) => {
+  const login = (newToken,newRole,newUsername,newPost) => {
+
     window.localStorage.setItem("token",newToken);
     window.localStorage.setItem("role",newRole);
     window.localStorage.setItem("username",newUsername);
+    window.localStorage.setItem("post",newPost);
     changeToken(newToken);
     changeRole(newRole);
     changeUsername(newUsername);
+    changePost(newPost);
   }
   const logout = () => {
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("role");
     window.localStorage.removeItem("username");
-    changeRole("");
+    window.localStorage.removeItem("post");
+    
     changeToken(undefined);
+    changeRole("");
     changeUsername("");
+    changePost("");
 
   }
   return (
@@ -48,14 +56,17 @@ function App() {
         <Nav>
         </Nav>
       </Navbar.Collapse>
-      
     </Navbar>
-    
-       
       {token ? (
-        role=="admin" ? <AdminDashboard client={client} username={username} logout={logout}/> : <ParticipantDashboard client={client} username={username}  logout={logout}/>
+        role=="admin" 
+        ? <AdminDashboard client={client} username={username} logout={logout}/> 
+        : role=="employer"
+        ? <EmpDashboard client={client} username={username}  logout={logout}/>
+        : role=="participant"
+        ? <ParticipantDashboard client={client} post={post} username={username}  logout={logout}/>
+        : <></>
       ) : (
-        <Login loggedIn={(token,role,username) => login(token,role,username)} client={client} logout={logout}/>
+        <Login loggedIn={(token,role,username,post) => login(token,role,username,post)} client={client} logout={logout}/>
       )
 
       }
@@ -63,4 +74,4 @@ function App() {
   );
   
 }
-export default App;
+export default SApp;

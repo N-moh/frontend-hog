@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App'
+import './SApp'
 import Add from "./Add";
 import Find from "./Find";
 import Button from 'react-bootstrap/Button';
-import SProfilecard from './SProfilecard';
+import Profilecard from './Profilecard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 
 
 //mport Table from 'react-bootstrap/Table';
-function EmpDashboard(props) {
+function AdminDashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
+
   const [current, cCurrent] = useState(undefined);
   const [show,setShow]=useState(false)
   const [show2,setShow2]=useState(false)
@@ -21,15 +22,15 @@ function EmpDashboard(props) {
   const refreshList = () => {
     props.client.getProfileForms().then((response) => cProfileForms(response.data));
   };
-//   const removeProfileForm = (id) => {
-//     props.client.removeProfileForm(id).then(() => refreshList());
-//   };
-//   const updateProfileForm= (id) => {
-//     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
-//    if(e.length>0){
-//     cCurrent(e[0])
-//    }
-//   };
+  const removeProfileForm = (id) => {
+    props.client.removeProfileForm(id).then(() => refreshList());
+  };
+  const updateProfileForm= (id) => {
+    let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
+   if(e.length>0){
+    cCurrent(e[0])
+   }
+  };
   const querySearch = (searchParams) => {
     props.client.queryResult(searchParams).then((response) => cProfileForms(response.data))
   }
@@ -42,7 +43,7 @@ function EmpDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <SProfilecard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} ></SProfilecard>
+          <Profilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} admincomments={current.admincomments} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
         </>
 
 
@@ -51,15 +52,13 @@ function EmpDashboard(props) {
   }
     return (
 
-       <main>
+      <main>
         <Container className="contentContainer">
           <Row className="headerRow">
-            <h5 className="header-title">Employer Dashboard</h5>
-            <h4>logged in as {props.username}</h4>
+            <h5 className="header-title">Admin Dashboard</h5>
+            <h4>Logged in as {props.username}</h4>
           </Row>
-
     
-
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
       <Button  onClick={props.logout}>
           {" "}
@@ -69,12 +68,26 @@ function EmpDashboard(props) {
 
         <br />
         <div class="row row-cols-1 row-cols-md-3 g-4">
-       {buildcards()}
+          {buildcards()}
         </div>
-      <Row className="bodyRow mx-auto text-center mt-2">
-      
-    
-      <Col>
+     <Row className="bodyRow mx-auto text-center mt-2">
+      <Col xs={6}>
+      { show?
+      <>
+      <Add
+        client={props.client}
+        refreshList={() => {
+          refreshList();
+          cCurrent(undefined);
+        }}
+        currentProfileForm={current}
+        logout={props.logout}
+      />
+      <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
+      </>
+      : <a class="buttonShowAdd2" onClick={() => setShow(!show)}>Add post</a> }
+      </Col>
+      <Col xs={6}>
         { show2? 
           <>
         <Find
@@ -89,9 +102,9 @@ function EmpDashboard(props) {
         </Col>
         </Row>
         </Container>
-     </main>
+      </main>
 
   );
   
 }
-export default EmpDashboard;
+export default AdminDashboard;

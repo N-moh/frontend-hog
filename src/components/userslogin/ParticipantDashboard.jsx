@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App'
-import Add from "./Add";
-import Find from "./Find";
+import './SApp'
+import ParticipantAdd from "./ParticipantAdd";
+//import Find from "./Find";
 import Button from 'react-bootstrap/Button';
 import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
@@ -17,6 +17,7 @@ import { Container } from "react-bootstrap";
   const refreshList = () => {
   props.client.getProfileForms().then((response) => cProfileForms(response.data));
   };
+
  
   const updateProfileForm= (id) => {
     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
@@ -25,21 +26,26 @@ import { Container } from "react-bootstrap";
    }
   };
 
+
   useEffect(() => {
     refreshList();
   }, []);
   
- {/*} function buildcards() {
-    return profileForms.map((current) => {
+  const buildcard = () => {
+    return profileForms.slice(-1).map((current,i) => {
       return (
         <>
+
+       <Row key={i}>
           <ParticipantCard id={current._id} fullname={current.fullname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
+          
+        </Row>
         </>
 
 
       );
     });
-  }*/}
+  }
     return (
 
       <main>
@@ -57,16 +63,16 @@ import { Container } from "react-bootstrap";
       </div>
 
         <br />
+        <Row>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-         {/* {buildcards()}*/}
+          {buildcard()}
         </div>
+        </Row>
       <Row className="bodyRow mx-auto text-center mt-2">
-      <ParticipantCard />
-      
-      
-      
+      {/*<ParticipantCard  id={current.id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}/>*/}
       <Col xs={6}>
-      <Add
+      <ParticipantAdd
+      username={props.username}
         client={props.client}
         refreshList={() => {
           refreshList();

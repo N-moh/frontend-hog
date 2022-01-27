@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import  Card  from "react-bootstrap/Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App'
+//import './SApp'
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPortrait ,faEnvelope} from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +20,7 @@ console.log(Profilecard)
                 <Card.Body >
                 <Card.Img  className="mh-10 mw-10 cardImg hover-shadow"  src={props.picture} alt="" />
                     <Card.Text><h3> {props.firstname} {props.lastname}</h3></Card.Text>
-                    <Card.Text>Bio: {props.bio} </Card.Text>
+                    <Card.Text>{props.bio} </Card.Text>
                     <Card.Link href={"mailto:"+props.email}> <FontAwesomeIcon icon = {faEnvelope}></FontAwesomeIcon></Card.Link>
                     <Card.Link target="_blank" href={props.github}><FontAwesomeIcon icon = {faGithub}></FontAwesomeIcon></Card.Link>
                     <Card.Link target="_blank" href={props.linkedin}><FontAwesomeIcon icon = {faLinkedin}></FontAwesomeIcon></Card.Link>

@@ -5,9 +5,10 @@ const url = "http://localhost:3001/";
 
 
 export class ApiClient {
-  constructor(tokenProvider,newRole,newUsername,logoutHandler){
+  constructor(tokenProvider,newRole,newUsername,newPost,logoutHandler){
     this.role=newRole;
-    this.username=newUsername
+    this.post=newPost;
+    this.username=newUsername;
     this.tokenProvider = tokenProvider;
     this.logoutHandler = logoutHandler;
   }
@@ -40,29 +41,30 @@ export class ApiClient {
   login(username,password) {
     return this.apiCall("post",url + "auth/",{username: username, password:password});
   }
-
-
   getProfileForms() {
     return this.authenticatedCall("get", url);
   }
-  
-  getProfileForm() {
-    return this.authenticatedCall("get", url);
+
+  getProfileForm(id) {
+    return this.authenticatedCall("get", `${url}profile/${id}`);
   }
-
-
-
+  
+  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) { 
+    return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
+  }
+  updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
+    return this.authenticatedCall("put", `${url}participant/${id}`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
+  }
   addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date) {
     
     return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,picture,hired,course,date});
   }
-   postImage(name,file){
+  postImage(name,file){
     const formData = new FormData();
     formData.append('name',name);
     formData.append('myFile',file);
     return this.authenticatedCall("post",`${url}user/new`,formData)
-}
-  
+  }
   removeProfileForm(id) {
     return this.authenticatedCall("delete", `${url}${id}`);
   }
@@ -72,6 +74,4 @@ export class ApiClient {
   queryResult(searchParams){
     return this.authenticatedCall("post", `${url}tda/search`, searchParams)
   }
-
-
 }

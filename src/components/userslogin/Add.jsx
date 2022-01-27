@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Upload from './Upload';
+import Upload from '../../Upload';
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
 
-function ParticipantAdd(props) {
+function Add(props) {
   const [disabled, cDisabled] = useState(false);
   const[picture,cPicture]=useState('')
   const submitHandler = (e) => {
@@ -19,28 +19,48 @@ function ParticipantAdd(props) {
       result = props.client.updateProfileForm(
         props.currentProfileForm._id,
        
-        e.target.fullname.value,
+        e.target.firstname.value,
+        e.target.lastname.value,
         e.target.email.value,
         e.target.bio.value,
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
+        e.target.admincomments.value,
         picture,
+        e.target.hired.checked,
         e.target.course.value,
         e.target.date.value
-       );
+
+
+        
+        //e.target.picture.value,
+
+        //e.target.cv.value,
+
+        //e.target.covidPass.checked
+        
+      );
     } else {
-       result = props.client.addProfileForm(
+      console.log()
+      result = props.client.addProfileForm(
          
-        e.target.fullname.value,
+        e.target.firstname.value,
+        e.target.lastname.value,
         e.target.email.value,
         e.target.bio.value,
         e.target.linkedin.value,
         e.target.github.value,
         e.target.portfolio.value,
+        e.target.admincomments.value,
         picture,
+        e.target.hired.checked,
         e.target.course.value,
-        e.target.date.value             
+        e.target.date.value
+
+        
+        //e.target.picture.value,
+       // e.target.cv.value
         );
     }
     result
@@ -56,23 +76,41 @@ function ParticipantAdd(props) {
   };
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+    {props.currentProfileForm? "Update Profile" : "Add Profile"}
+    </div>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
       <br />
       <Form onSubmit={(e) => submitHandler(e)} id="addForm">
-        <Row className="g-2">
-          <Col md>
-        <Form.Group>
-      <Form.Label >Full Name:</Form.Label> <br />
+     <Row className="g-2">
+      <Col md>
+      <Form.Group>
+      <Form.Label >First Name:</Form.Label> <br />
         <Form.Control
           required
           type="text"
-          defaultValue={props.currentProfileForm?.fullname || ""}
-          name="fullname"
+          defaultValue={props.currentProfileForm?.firstname || ""}
+          name="firstname"
           disabled={disabled}
-          placeholder="Your full name here"
+          placeholder="Your first name here"
         />
         </Form.Group>
         </Col>
+        <Col md>
+        <Form.Group>
+        <Form.Label >Last Name:</Form.Label> <br />
+        <Form.Control
+          required
+          type="text"
+          defaultValue={props.currentProfileForm?.lastname || ""}
+          name="lastname"
+          disabled={disabled}
+          placeholder="Your last name here"
+        />
+        </Form.Group>
+        </Col>
+        </Row>
+        <Row>
         <Col md>
         <Form.Group>
         <Form.Label>Email </Form.Label><br />
@@ -133,9 +171,49 @@ function ParticipantAdd(props) {
         </Form.Control>
         </Form.Group>
         </Row>
-         
         <Row>
+          <Col md>
+        <Form.Group>
+        <Form.Label>Admin Comments </Form.Label>
+        <Form.Control
+          type="text"
+          defaultValue={props.currentProfileForm?.admincomments || ""}
+          name="admincomments"
+          disabled={disabled}>
+        </Form.Control>
+        </Form.Group>
+        </Col>
         <Col md>
+        <Form.Group>
+        <Form.Label>Hired</Form.Label>
+        <Form.Check
+          type="switch"
+          defaultChecked={props.currentProfileForm?.hired || ""}
+          name="hired"
+          disabled={disabled}/>  
+        </Form.Group>
+        </Col>
+        </Row>
+        {/*<input
+         
+          type="file"
+          //defaultValue={props.currentProfileForm?.picture || "https://i.imgur.com/WiuO4Qg.png"}
+          name="picture"
+          disabled={disabled}
+        /> */}
+        
+
+        {/* CV
+        <br/>
+        <input
+         
+          type="file"
+          defaultValue={props.currentProfileForm?.cv}
+          name="cv"
+          disabled={disabled}
+        /><br/> */}
+        <Row>
+          <Col md>
         <Form.Group>
         <Form.Label>Course</Form.Label>
         <Form.Select
@@ -172,4 +250,4 @@ function ParticipantAdd(props) {
     </>
   );
 }
-export default ParticipantAdd;
+export default Add;
