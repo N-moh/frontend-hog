@@ -13,18 +13,17 @@ import { Container } from "react-bootstrap";
   function ParticipantDashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
   const [current, cCurrent] = useState(undefined);
+  
   const id = props.post
   const refreshList = () => {
   props.client.getProfileForm(id).then((response) => cProfileForms([response.data]));
   };
-
   const updateProfileForm= (id) => {
     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
     if(e.length>0){
     cCurrent(e[0])
     }
   };
-
 
   useEffect(() => {
     refreshList();
