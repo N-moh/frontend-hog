@@ -1,5 +1,6 @@
 import React,{ useState } from "react";
 import "./contact.scss";
+import { Container } from "react-bootstrap";
 
 export default function Contact() {
   const [message, setMessage] = useState(false);
@@ -9,6 +10,7 @@ export default function Contact() {
     setMessage(true);
   };
   return (
+    <Container className="contact-container">
     <div className="contact" id="contact">
       <div className="left">
         <img src="assets/shake.png" alt="" />
@@ -23,5 +25,6 @@ export default function Contact() {
         </form>
       </div>
     </div>
+    </Container>
   );
 }

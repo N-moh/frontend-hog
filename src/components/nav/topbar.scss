@@ -3,12 +3,13 @@
 .topbar {
   width: 100%;
   height: 70px;
-  background-color: white;
+  background-color:lightgrey;
   color: $mainColor;
   position: fixed;
   top: 0;
   z-index: 3;
   transition: all 1s ease;
+  overflow-y: hidden;
 
   .wrapper {
     padding: 10px 30px;
