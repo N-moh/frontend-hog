@@ -10,17 +10,17 @@ export default function Contact() {
     setMessage(true);
   };
   return (
-    <Container className="contact-container">
+    <Container >
     <div className="contact" id="contact">
       <div className="left">
-        <img src="assets/shake.png" alt="" />
+        <img src="assets/pic12.png" alt="" />
       </div>
       <div className="right">
         <h2>Contact.</h2>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Email" />
           <textarea placeholder="Message"></textarea>
-          <button type="submit">Send</button>
+          <button className="submit button" type="submit">Send</button>
           {message && <span>Thanks,You will get a reply soon</span>}
         </form>
       </div>

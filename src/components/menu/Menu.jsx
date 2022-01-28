@@ -6,14 +6,15 @@ export default function Menu({ menuOpen, setMenuOpen }) {
   return (
     <div className={"menu "+(menuOpen && "active")}>
       <ul>
+      
       <Link to="intro">  
-        <li onClick={()=>setMenuOpen(false)}>
-          intro
+        <li classnaonClick={()=>setMenuOpen(false)}>
+          Home
           </li>
           </Link>
           <Link to="dashboard">  
         <li onClick={()=>setMenuOpen(false)}>
-          dashboard
+          Dashboard
           </li>
           </Link>
    
@@ -22,7 +23,7 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                 
      
         <li onClick={()=>setMenuOpen(false)}>
-          contact
+          Contact
         </li>
         </Link>
       </ul>
