@@ -20,12 +20,9 @@ export default function Upload(props) {
   const submitFile = () => {
     props.client.postImage('colin',selectedFile)
     .then((res) => {
-    
-    props.changePicture("http://localhost:3001" + res.data.filename.replace('./uploads/','/user/pic/') );
-    console.log(res.data.filename.replace('./uploads/','/user/pic/'))
+    console.log(res)
+    props.changePicture(res.data.link);
     })
-  
-    
   } 
   
 
