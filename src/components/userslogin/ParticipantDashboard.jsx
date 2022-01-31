@@ -7,6 +7,7 @@ import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+//import MultiSelectSkills from "./MultiSelectSkills";
 
 
 //mport Table from 'react-bootstrap/Table';
@@ -33,7 +34,7 @@ import { Container } from "react-bootstrap";
     return profileForms.map((current) => {
       return (
         <>
-          <ParticipantCard id={current._id} firstname={current.firstname} lastname={current.lastname}  email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} updateProfileForm={updateProfileForm}></ParticipantCard>
+          <ParticipantCard id={current._id} firstname={current.firstname} lastname={current.lastname}  email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} skills={current.skills} hired={current.hired?"true":"false"} updateProfileForm={updateProfileForm}></ParticipantCard>
         </>
       );
     });
@@ -41,6 +42,7 @@ import { Container } from "react-bootstrap";
   return (
     <main>
       <Container className="contentContainer">
+      
         <Row className="headerRow">
           <h5 className="header-title">Participants Dashboard</h5>
           <h4>Logged in as {props.username}</h4>
@@ -56,6 +58,8 @@ import { Container } from "react-bootstrap";
       <Col xs={6}>
         {buildcards()}
       </Col>
+     
+
       <Col xs={6}>
       <ParticipantAdd
       username={props.username}

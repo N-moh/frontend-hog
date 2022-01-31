@@ -8,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 //import { NavLink } from "react-bootstrap";
 //import ValidationTextFields from "../../ValidationTextFields";
+
 import ParticipantDashboard from "./ParticipantDashboard";
 
 
@@ -55,8 +56,11 @@ function SApp() {
       <Navbar.Collapse className="nav-link">
         <Nav>
         </Nav>
+
       </Navbar.Collapse>
+
     </Navbar>
+    
       {token ? (
         role=="admin" 
         ? <AdminDashboard client={client} username={username} logout={logout}/> 
@@ -71,6 +75,7 @@ function SApp() {
 
       }
     </>
+    
   );
   
 }

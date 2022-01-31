@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Upload from "./Upload";
+import Upload from './Upload';
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Select from 'react-select';
@@ -12,11 +12,9 @@ import makeAnimated from 'react-select/animated';
 
 
 
-function ParticipantAdd(props) {
+function DParticipantAdd(props) {
   const [disabled, cDisabled] = useState(false);
   const[picture,cPicture]=useState('')
-  const[skills,cSkills]=useState([])
-
   const skillOptions = [
     { value: 'JS', label: 'JaveScript' },
     { value: 'HTML', label: 'Html' },
@@ -27,10 +25,9 @@ const animatedComponents = makeAnimated();
   const submitHandler = (e) => {
     e.preventDefault();
     cDisabled(true);
-    console.log("skills", skills.map( (item) => { return(item.value)}))
     let result;
     if (props.currentProfileForm) {
-      
+      console.log("update")
       result = props.client.updateParticipantForm(
         
         props.currentProfileForm._id,
@@ -45,9 +42,8 @@ const animatedComponents = makeAnimated();
         picture,
         e.target.hired.checked,
         e.target.course.value,
-        skills.map( (item) => { return(item.value)}),
         e.target.date.value,
-        
+        e.target.skills.value
       );
     } else {
       console.log()
@@ -63,9 +59,8 @@ const animatedComponents = makeAnimated();
         picture,
         e.target.hired.checked,
         e.target.course.value,
-        skills.map( (item) => { return(item.value)}),
         e.target.date.value,
-        
+        e.target.skills.value
       );
     }
     result
@@ -240,13 +235,12 @@ const animatedComponents = makeAnimated();
         
         
         <Select
-          onChange={(e)=>{cSkills(e)}}
+          
           closeMenuOnSelect={false}
           components={animatedComponents}
-          defaultValue={props.skills}
+          defaultValue={[skillOptions[4], skillOptions[5]]}
           isMulti
-          options={skillOptions}
-          name="skills">
+          options={skillOptions}>  
           </Select>
         
         </Form.Group>
@@ -261,4 +255,4 @@ const animatedComponents = makeAnimated();
     </>
   );
 }
-export default ParticipantAdd;
+export default DParticipantAdd;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Upload from "./Upload";
+//import Upload from './Upload';
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
@@ -28,6 +28,7 @@ function Add(props) {
         e.target.admincomments.value,
         e.target.hired.checked,
         e.target.course.value,
+        e.target.skills.value,
         e.target.date.value
       );
     } else {
@@ -43,6 +44,7 @@ function Add(props) {
         e.target.admincomments.value,
         e.target.hired.checked,
         e.target.course.value,
+        e.target.skills.value,
         e.target.date.value
         );
     }
@@ -190,6 +192,7 @@ function Add(props) {
         </Form.Group>
         </Col>
         <Col md>
+
         <Form.Group>
         <Form.Label>Date</Form.Label>
         <Form.Control
@@ -198,6 +201,21 @@ function Add(props) {
           name="date"
           disabled={disabled}>
         </Form.Control>
+        </Form.Group>
+        </Col>
+        </Row>
+        <Row>
+          <Col md>
+        <Form.Group>
+        <Form.Label>Course</Form.Label>
+        <Form.Select
+        id= "skills"  name="skills">
+          
+        <option value="HTML">Html</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="React">React</option>
+        <option value="Scss">Scss</option>
+        </Form.Select>
         </Form.Group>
         </Col>
         </Row>

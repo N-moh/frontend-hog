@@ -31,6 +31,7 @@ console.log(Profilecard)
                     <Card.Text>{props.cv}</Card.Text>
                     <Card.Text>Hired: {props.hired}</Card.Text>
                     <Card.Text>Course: {props.course}</Card.Text>
+                    <Card.Text>Skills: {props.skills}</Card.Text>
                     <Card.Text>Start date:<Moment format="DD MMM yyyy" >{props.date}</Moment></Card.Text>
                     <Card.Text>Admin Comments: {props.admincomments}</Card.Text>
                     <Button class="see-less-btn" size="sm" onClick={() => setShow(!show)}>See less</Button>

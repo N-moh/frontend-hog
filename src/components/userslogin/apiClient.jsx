@@ -51,12 +51,12 @@ export class ApiClient {
   // Participant functions
 
   // Add for Participants
-  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) { 
-    return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
+  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date) { 
+    return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date});
   }
   // Update for participants
-  updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date) {
-    return this.authenticatedCall("put", `${url}participant/${id}`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,date});
+  updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date) {
+    return this.authenticatedCall("put", `${url}participant/${id}`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date});
   }
   // Fetches card for participants
   getProfileForm(id) {
@@ -77,16 +77,16 @@ export class ApiClient {
     return this.authenticatedCall("get", url);
   }
   // Add for Admins
-  addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date) {
-    return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date});
+  addProfileForm(firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,skills,date) {
+    return this.authenticatedCall("post", url, {firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,skills,date});
   }
   // Remove posts for Admins
   removeProfileForm(id) {
     return this.authenticatedCall("delete", `${url}${id}`);
   }
   // Update for Admins
-  updateProfileForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date) {
-    return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,date});
+  updateProfileForm(id,firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,skills,date) {
+    return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,skills,date});
   }
 
   //Find functionality
