@@ -16,7 +16,7 @@ import makeAnimated from 'react-select/animated';
 function ParticipantAdd(props) {
   const [disabled, cDisabled] = useState(false);
   const[picture,cPicture]=useState('' || props.picture)
-  const[cv,cCV]=useState('')
+  const[cv,cCV]=useState('' || props.cv)
   const[skills,cSkills]=useState([])
 
   const skillOptions = [

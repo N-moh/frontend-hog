@@ -125,7 +125,7 @@ export default function ParticipantCard(props) {
           </Typography>
           </CardContent>
           <CardContent>
-          
+          <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
           
         </CardContent>
       </Collapse>
