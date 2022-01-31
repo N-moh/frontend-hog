@@ -89,11 +89,7 @@ export default function ParticipantCard(props) {
         <IconButton aria-label="Portfolio" target="_blank" href= {props.portfolio}>  
           <PersonIcon />
         </IconButton>
-        <IconButton aria-label="Download" target="_blank" href={props.cv} >
-          <Download
-          Icon />
-        </IconButton>
-
+        
         
         <ExpandMore
           expand={expanded}
@@ -125,6 +121,16 @@ export default function ParticipantCard(props) {
             
           </Typography>
           </CardContent>
+          <CardContent>
+          <Typography >
+            CV
+          <IconButton aria-label="Download" target="_blank" href={props.cv} >
+          <DownloadIcon />
+        </IconButton>
+        </Typography>
+          </CardContent>
+
+
           <CardContent>
           <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
           
