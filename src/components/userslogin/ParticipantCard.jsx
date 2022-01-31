@@ -79,7 +79,7 @@ export default function ParticipantCard(props) {
 
         <IconButton aria-label="Email" href={"mailto:"+props.email} >
           <EmailIcon />
-    </IconButton>
+        </IconButton>
         <IconButton aria-label="Github" target="_blank" href={props.github}>
           <GitHubIcon />
         </IconButton>
@@ -88,6 +88,9 @@ export default function ParticipantCard(props) {
         </IconButton>
         <IconButton aria-label="Portfolio" target="_blank" href= {props.portfolio}>  
           <PersonIcon />
+        </IconButton>
+        <IconButton aria-label="Email" target="_blank" href={props.cv} >
+          <EmailIcon />
         </IconButton>
 
         
@@ -123,7 +126,7 @@ export default function ParticipantCard(props) {
           </CardContent>
           <CardContent>
           
-          <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
+          
         </CardContent>
       </Collapse>
     </Card>

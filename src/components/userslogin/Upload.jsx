@@ -18,7 +18,7 @@ export default function Upload(props) {
   }
 
   const submitFile = () => {
-    props.client.postImage('colin',selectedFile)
+    props.client.postImage('tom',selectedFile)
     .then((res) => {
     console.log(res)
     props.changePicture(res.data.link);

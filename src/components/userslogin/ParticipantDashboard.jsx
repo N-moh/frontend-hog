@@ -34,11 +34,13 @@ import { Container } from "react-bootstrap";
     return profileForms.map((current) => {
       return (
         <>
-          <ParticipantCard id={current._id} firstname={current.firstname} lastname={current.lastname}  email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} skills={current.skills} hired={current.hired?"true":"false"} updateProfileForm={updateProfileForm}></ParticipantCard>
+          <ParticipantCard id={current._id} firstname={current.firstname} lastname={current.lastname}  email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} picture={current.picture} course={current.course} date={current.date} skills={current.skills} hired={current.hired?"true":"false"} cv={current.cv} updateProfileForm={updateProfileForm}></ParticipantCard>
         </>
       );
     });
   }
+  useEffect(() =>
+  {buildcards()}, [])
   return (
     <main>
       <Container className="contentContainer">
@@ -58,8 +60,6 @@ import { Container } from "react-bootstrap";
       <Col xs={6}>
         {buildcards()}
       </Col>
-     
-
       <Col xs={6}>
       <ParticipantAdd
       username={props.username}

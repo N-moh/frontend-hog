@@ -3,6 +3,7 @@ import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Upload from "./Upload";
+import CvUpload from "./cvUpload";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Select from 'react-select';
@@ -14,7 +15,8 @@ import makeAnimated from 'react-select/animated';
 
 function ParticipantAdd(props) {
   const [disabled, cDisabled] = useState(false);
-  const[picture,cPicture]=useState('')
+  const[picture,cPicture]=useState('' || props.picture)
+  const[cv,cCV]=useState('')
   const[skills,cSkills]=useState([])
 
   const skillOptions = [
@@ -47,6 +49,7 @@ const animatedComponents = makeAnimated();
         e.target.course.value,
         skills.map( (item) => { return(item.value)}),
         e.target.date.value,
+        cv
         
       );
     } else {
@@ -65,7 +68,7 @@ const animatedComponents = makeAnimated();
         e.target.course.value,
         skills.map( (item) => { return(item.value)}),
         e.target.date.value,
-        
+        cv
       );
     }
     result
@@ -196,16 +199,6 @@ const animatedComponents = makeAnimated();
       
         </Row>
         
-
-        {/* CV
-        <br/>
-        <input
-         
-          type="file"
-          defaultValue={props.currentProfileForm?.cv}
-          name="cv"
-          disabled={disabled}
-        /><br/> */}
         <Row>
           <Col md>
         <Form.Group>
@@ -233,6 +226,10 @@ const animatedComponents = makeAnimated();
         <Form.Group>
         <Form.Label>Picture</Form.Label>
         <Upload client={props.client} changePicture={cPicture}/>
+        </Form.Group>
+        <Form.Group>
+        <Form.Label>CV</Form.Label>
+        <CvUpload client={props.client} changeCv={cCV}/>
         </Form.Group>
         <Form.Group>
         
