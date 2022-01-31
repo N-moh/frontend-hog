@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FormLabel } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Upload from '../../Upload';
+import Upload from "./Upload";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
