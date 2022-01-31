@@ -46,21 +46,7 @@ function Login(props) {
           Submit{" "}
         </Button>
 </Form>
-      {/*<form onSubmit={(e) => submitHandler(e)}>
-        username
-        <br />
-        <input type="text" name="username" disabled={disabled} />
-        <br />
-        password
-        <br />
-        <input type="password" name="password" disabled={disabled} />
-        <br />
-        <br />
-        <Button type="submit" disabled={disabled}>
-          {" "}
-          Submit{" "}
-        </Button>
-  </form>*/}
+      
   </div>
     </>
   );
