@@ -5,11 +5,20 @@ import Form from 'react-bootstrap/Form';
 //import Upload from './Upload';
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
 function Add(props) {
   const [disabled, cDisabled] = useState(false);
-  const[picture,cPicture]=useState('')
+  const[skills,cSkills]=useState([])
+  const skillOptions = [
+    { value: 'JS', label: 'JaveScript' },
+    { value: 'HTML', label: 'Html' },
+    { value: 'CSS', label: 'CSS' }
+  ]
+const animatedComponents = makeAnimated();
+
+
   const submitHandler = (e) => {
     e.preventDefault();
     cDisabled(true);
@@ -28,7 +37,7 @@ function Add(props) {
         e.target.admincomments.value,
         e.target.hired.checked,
         e.target.course.value,
-        e.target.skills.value,
+        skills.map( (item) => { return(item.value)}),
         e.target.date.value
       );
     } else {
@@ -44,7 +53,7 @@ function Add(props) {
         e.target.admincomments.value,
         e.target.hired.checked,
         e.target.course.value,
-        e.target.skills.value,
+        skills.map( (item) => { return(item.value)}),
         e.target.date.value
         );
     }
@@ -204,21 +213,23 @@ function Add(props) {
         </Form.Group>
         </Col>
         </Row>
-        <Row>
-          <Col md>
+        
         <Form.Group>
-        <Form.Label>Course</Form.Label>
-        <Form.Select
-        id= "skills"  name="skills">
-          
-        <option value="HTML">Html</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="React">React</option>
-        <option value="Scss">Scss</option>
-        </Form.Select>
+        
+        <Form.Label>Skills</Form.Label>
+        
+        
+        <Select
+          onChange={(e)=>{cSkills(e)}}
+          closeMenuOnSelect={false}
+          components={animatedComponents}
+          defaultValue={props.skills}
+          isMulti
+          options={skillOptions}
+          name="skills">
+          </Select>
+        
         </Form.Group>
-        </Col>
-        </Row>
         <br/>
         <Button size="sm"type="submit" disabled={disabled}>
           {" "}
