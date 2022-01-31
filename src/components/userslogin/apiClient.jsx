@@ -51,12 +51,12 @@ export class ApiClient {
   // Participant functions
 
   // Add for Participants
-  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date) { 
-    return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date});
+  addParticipantForm(username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date,cv) { 
+    return this.authenticatedCall("post", `${url}participant`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date,cv});
   }
   // Update for participants
-  updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date) {
-    return this.authenticatedCall("put", `${url}participant/${id}`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date});
+  updateParticipantForm(id,username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date,cv) {
+    return this.authenticatedCall("put", `${url}participant/${id}`, {username,firstname,lastname,email,bio,linkedin,github,portfolio,picture,hired,course,skills,date,cv});
   }
   // Fetches card for participants
   getProfileForm(id) {
@@ -68,6 +68,13 @@ export class ApiClient {
     formData.append('name',name);
     formData.append('myFile',file);
     return this.authenticatedCall("post",`${url}imageUpload`,formData)
+  }
+  // Uploads cv for participants
+  postCv(name,file){
+    const formData = new FormData();
+    formData.append('name',name);
+    formData.append('cvFile',file);
+    return this.authenticatedCall("post",`${url}cvUpload`,formData)
   }
 
   // Admin functions
