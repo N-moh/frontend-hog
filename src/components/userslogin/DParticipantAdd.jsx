@@ -12,7 +12,7 @@ import makeAnimated from 'react-select/animated';
 
 
 
-function ParticipantAdd(props) {
+function DParticipantAdd(props) {
   const [disabled, cDisabled] = useState(false);
   const[picture,cPicture]=useState('')
   const skillOptions = [
@@ -255,4 +255,4 @@ const animatedComponents = makeAnimated();
     </>
   );
 }
-export default ParticipantAdd;
+export default DParticipantAdd;

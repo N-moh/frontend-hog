@@ -108,12 +108,20 @@ export default function ParticipantCard(props) {
             Course: {props.course}
             
           </Typography>
-
+          </CardContent>
+          <CardContent>
           <Typography paragraph>
+            Skills: {props.skills}
+            
+          </Typography>
+          </CardContent>
+          <CardContent>
+          <Typography >
             Hired: {props.hired}
             
           </Typography>
-
+          </CardContent>
+          <CardContent>
           
           <Button variant="success" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
         </CardContent>
