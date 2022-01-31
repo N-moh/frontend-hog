@@ -67,7 +67,7 @@ export class ApiClient {
     const formData = new FormData();
     formData.append('name',name);
     formData.append('myFile',file);
-    return this.authenticatedCall("post",`${url}user/new`,formData)
+    return this.authenticatedCall("post",`${url}imageUpload`,formData)
   }
 
   // Admin functions
