@@ -19,7 +19,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PersonIcon from '@mui/icons-material/Person';
-
+import DownloadIcon from '@mui/icons-material/Download';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -89,8 +89,9 @@ export default function ParticipantCard(props) {
         <IconButton aria-label="Portfolio" target="_blank" href= {props.portfolio}>  
           <PersonIcon />
         </IconButton>
-        <IconButton aria-label="Email" target="_blank" href={props.cv} >
-          <EmailIcon />
+        <IconButton aria-label="Download" target="_blank" href={props.cv} >
+          <Download
+          Icon />
         </IconButton>
 
         
