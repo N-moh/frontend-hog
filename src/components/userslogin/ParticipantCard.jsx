@@ -90,8 +90,7 @@ export default function ParticipantCard(props) {
           <PersonIcon />
         </IconButton>
         <IconButton aria-label="Download" target="_blank" href={props.cv} >
-          <Download
-          Icon />
+          <DownloadIcon />
         </IconButton>
 
         

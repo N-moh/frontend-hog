@@ -41,6 +41,9 @@ export class ApiClient {
   login(username,password) {
     return this.apiCall("post",url + "auth/",{username: username, password:password});
   }
+  signup(username,email,password) {
+    return this.apiCall("post",url + "signup/",{username:username,email:email,password:password});
+  }
   // Employer functions
 
   // Gets NEETs for Employers
