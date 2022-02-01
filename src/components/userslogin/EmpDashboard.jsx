@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SApp'
-import Add from "./Add";
+//import Add from "./Add";
 import Find from "./Find";
 import Button from 'react-bootstrap/Button';
 import EmpProfilecard from './EmpProfilecard';
@@ -34,7 +34,7 @@ function EmpDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <EmpProfilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} picture={current.picture} course={current.course} date={current.date} ></EmpProfilecard>
+          <EmpProfilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} skills={current.skills} picture={current.picture} course={current.course} date={current.date} ></EmpProfilecard>
         </>
       );
     });
