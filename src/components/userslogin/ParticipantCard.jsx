@@ -89,9 +89,7 @@ export default function ParticipantCard(props) {
         <IconButton aria-label="Portfolio" target="_blank" href= {props.portfolio}>  
           <PersonIcon />
         </IconButton>
-        <IconButton aria-label="Download" target="_blank" href={props.cv} >
-          <DownloadIcon />
-        </IconButton>
+        
         
         <ExpandMore
           expand={expanded}

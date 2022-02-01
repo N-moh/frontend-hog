@@ -31,7 +31,7 @@ const animatedComponents = makeAnimated();
     cDisabled(true);
     console.log("skills", skills.map( (item) => { return(item.value)}))
     let result;
-    if (props.currentProfileForm) {
+    
       
       result = props.client.updateParticipantForm(
         
@@ -52,25 +52,7 @@ const animatedComponents = makeAnimated();
         cv
         
       );
-    } else {
-      console.log()
-      result = props.client.addParticipantForm(
-        props.username,
-        e.target.firstname.value,
-        e.target.lastname.value,
-        e.target.email.value,
-        e.target.bio.value,
-        e.target.linkedin.value,
-        e.target.github.value,
-        e.target.portfolio.value,
-        picture,
-        e.target.hired.checked,
-        e.target.course.value,
-        skills.map( (item) => { return(item.value)}),
-        e.target.date.value,
-        cv
-      );
-    }
+    
     result
       .then(() => {
         cDisabled(false);
@@ -84,10 +66,9 @@ const animatedComponents = makeAnimated();
   };
   return (
     <>
+    <h3> Update your profile </h3>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-    {props.currentProfileForm? "Update Profile" : "Add Profile"}
-    </div>
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+      
       <br />
       <Form onSubmit={(e) => submitHandler(e)} id="addForm">
      <Row className="g-2">
