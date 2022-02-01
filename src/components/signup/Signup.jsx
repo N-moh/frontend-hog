@@ -6,6 +6,8 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
+
+    height:'80vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -25,31 +27,33 @@ const useStyles = makeStyles(theme => ({
 const Signup = ({ handleClose }) => {
   const classes = useStyles();
   // create state variables for each input
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  //const [firstName, setFirstName] = useState('');
+  const [username, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(firstName, lastName, email, password);
+    console.log(username, email, password);
     handleClose();
+    
   };
 
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
-      <TextField
+      <h2>Sign Up</h2>
+      {/* <TextField
         label="First Name"
         variant="filled"
         required
         value={firstName}
         onChange={e => setFirstName(e.target.value)}
-      />
+      /> */}
       <TextField
-        label="Last Name"
+        label="User Name"
         variant="filled"
         required
-        value={lastName}
+        value={username}
         onChange={e => setLastName(e.target.value)}
       />
       <TextField
