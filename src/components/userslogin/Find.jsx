@@ -17,7 +17,8 @@ function Find(props) {
                 sEmail: e.target.sEmail.value,
                 sCourse: e.target.sCourse.value,
                 dateMin: e.target.dateMin.value,
-                dateMax: e.target.dateMax.value
+                dateMax: e.target.dateMax.value,
+                sSkills: e.target.sSkills.value
             }
             props.querySearch(searchParams)
     };
@@ -28,7 +29,7 @@ function Find(props) {
         <br />
         <Form className="form2" onSubmit={(e) => submitHandler(e)} id="findForm">
         <Form.Group>
-        <Form.Label>First name: </Form.Label>
+        <Form.Label>First name:</Form.Label>
         <Form.Control
             type="text"
             defaultValue={props.currentProfileForm?.sFirstname}
@@ -38,7 +39,7 @@ function Find(props) {
         </Form.Control>
         </Form.Group>
         <Form.Group>
-        <Form.Label>Last name: </Form.Label>
+        <Form.Label>Last name:</Form.Label>
         <Form.Control
             type="text"
             defaultValue={props.currentProfileForm?.sLastname}
@@ -48,28 +49,26 @@ function Find(props) {
         </Form.Control>
         </Form.Group>
         <Form.Group>
-            <Form.Label>Email:</Form.Label>
-         <Form.Control
+        <Form.Label>Email:</Form.Label>
+        <Form.Control
             type="text"
             defaultValue={props.currentProfileForm?.sEmail}
             name="sEmail"
             disabled={disabled}
             placeholder="Participant Email">
-          </Form.Control>
+        </Form.Control>
         </Form.Group>
         <Form.Group>
-         <Form.Label>    
-        Course: </Form.Label>
-
+        <Form.Label>Course:</Form.Label>
         <Form.Select id="sCourse" name="sCourse">
+            <option>Please select a course</option>
             <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
             <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
             <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
         </Form.Select>
         </Form.Group>
         <Form.Group>
-            <Form.Label>
-        Start date:</Form.Label>
+        <Form.Label>Start date:</Form.Label>
         <Form.Control
             type="date"
             defaultValue={props.currentProfileForm?.date}
@@ -77,11 +76,20 @@ function Find(props) {
             disabled={disabled}></Form.Control>
         </Form.Group>
         <Form.Group>
-        End date: 
+        <Form.Label>End date:</Form.Label>
         <Form.Control
             type="date"
             defaultValue={props.currentProfileForm?.date}
             name="dateMax"
+            disabled={disabled}>
+        </Form.Control>
+        </Form.Group>
+        <Form.Group>
+        <Form.Label>Skills:</Form.Label>
+        <Form.Control
+            type="text"
+            defaultValue={props.currentProfileForm?.sSkills}
+            name="sSkills"
             disabled={disabled}>
         </Form.Control>
         </Form.Group>

@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { FormLabel } from '@material-ui/core';
+import { Radio } from '@material-ui/core';
+import { RadioGroup } from '@material-ui/core';
+import { FormControlLabel } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,36 +28,61 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Signup = ({ handleClose }) => {
+const Signup = (props) => {
   const classes = useStyles();
   // create state variables for each input
-  //const [firstName, setFirstName] = useState('');
-  const [username, setLastName] = useState('');
-  const [email, setEmail] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [username, setUserName] = useState('');
+  const [role, setRole] = useState('');
   const [password, setPassword] = useState('');
+  const [lastname, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(username, email, password);
-    handleClose();
-    
+    props.client.signup(username, role, password, firstname, lastname, email)
   };
 
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
       <h2>Sign Up</h2>
-      {/* <TextField
-        label="First Name"
-        variant="filled"
-        required
-        value={firstName}
-        onChange={e => setFirstName(e.target.value)}
-      /> */}
+      <FormLabel id="demo-radio-buttons-group-label">Role</FormLabel>
+      <RadioGroup
+      aria-labelledby="demo-radio-buttons-group-label"
+      name="radio-buttons-group"
+      onChange={e => setRole(e.target.value)}
+      >
+    <FormControlLabel value="participant" control={<Radio />} label="Participant" />
+    <FormControlLabel value="employer" control={<Radio />} label="Employer" />
+      </RadioGroup>
       <TextField
         label="User Name"
         variant="filled"
         required
         value={username}
+        onChange={e => setUserName(e.target.value)}
+      />
+      <TextField
+        label="Password"
+        variant="filled"
+        type="password"
+        required
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+      />
+      <TextField
+        label="First Name"
+        variant="filled"
+        required
+        value={firstname}
+        onChange={e => setFirstName(e.target.value)}
+      />
+      <TextField
+        label="Last Name"
+        variant="filled"
+        required
+        value={lastname}
         onChange={e => setLastName(e.target.value)}
       />
       <TextField
@@ -64,16 +93,8 @@ const Signup = ({ handleClose }) => {
         value={email}
         onChange={e => setEmail(e.target.value)}
       />
-      <TextField
-        label="Password"
-        variant="filled"
-        type="password"
-        required
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-      />
       <div>
-        <Button variant="contained" onClick={handleClose}>
+        <Button variant="contained">
           Cancel
         </Button>
         <Button type="submit" variant="contained" color="primary">
