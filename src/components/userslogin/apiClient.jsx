@@ -41,8 +41,8 @@ export class ApiClient {
   login(username,password) {
     return this.apiCall("post",url + "auth/",{username: username, password:password});
   }
-  signup(username,email,password) {
-    return this.apiCall("post",url + "signup/",{username:username,email:email,password:password});
+  signup(username,role,password,firstname,lastname,email) {
+    return this.apiCall("post",`${url}signup`,{username:username,role:role,password:password,firstname:firstname,lastname:lastname,email:email});
   }
   // Employer functions
 

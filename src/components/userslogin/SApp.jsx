@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import EmpDashboard from "./EmpDashboard";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Signup from "../signup/Signup";
 //import { NavLink } from "react-bootstrap";
 //import ValidationTextFields from "../../ValidationTextFields";
 
@@ -70,7 +71,10 @@ function SApp() {
         ? <ParticipantDashboard client={client} post={post} username={username}  logout={logout}/>
         : <></>
       ) : (
+        <>
         <Login loggedIn={(token,role,username,post) => login(token,role,username,post)} client={client} logout={logout}/>
+        <Signup client={client}/>
+        </>
       )
 
       }
