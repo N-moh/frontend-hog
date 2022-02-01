@@ -3,12 +3,19 @@ import Container  from "react-bootstrap/Container";
 import './App.css';
 import  Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 
 
 function Find(props) {
     const [disabled, cDisabled] = useState(false);
-
+    const[skills,cSkills]=useState([])
+    const animatedComponents = makeAnimated();
+    const skillOptions = [
+        { value: 'JS', label: 'JaveScript' },
+        { value: 'HTML', label: 'Html' },
+        { value: 'CSS', label: 'CSS' }
+    ]
     const submitHandler = (e) => {
         e.preventDefault();
             const searchParams = { 
@@ -18,7 +25,7 @@ function Find(props) {
                 sCourse: e.target.sCourse.value,
                 dateMin: e.target.dateMin.value,
                 dateMax: e.target.dateMax.value,
-                sSkills: e.target.sSkills.value
+                sSkills: skills.map(item => item.value)
             }
             props.querySearch(searchParams)
     };
@@ -61,7 +68,7 @@ function Find(props) {
         <Form.Group>
         <Form.Label>Course:</Form.Label>
         <Form.Select id="sCourse" name="sCourse">
-            <option>Please select a course</option>
+            <option value="">Please select a course</option>
             <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
             <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
             <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
@@ -85,13 +92,16 @@ function Find(props) {
         </Form.Control>
         </Form.Group>
         <Form.Group>
-        <Form.Label>Skills:</Form.Label>
-        <Form.Control
-            type="text"
-            defaultValue={props.currentProfileForm?.sSkills}
-            name="sSkills"
-            disabled={disabled}>
-        </Form.Control>
+        <Form.Label>Skills</Form.Label>
+        <Select
+            onChange={(e)=>{cSkills(e)}}
+            closeMenuOnSelect={false}
+            components={animatedComponents}
+            defaultValue={props.skills}
+            isMulti
+            options={skillOptions}
+            name="skills">
+        </Select>
         </Form.Group>
         <br/>
         <Button  size="sm" type="submit" disabled={disabled}>
