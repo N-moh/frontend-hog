@@ -214,12 +214,13 @@ const animatedComponents = makeAnimated();
         </Col>
         </Row>
         
-        <Form.Group>
+        <Form.Group className="findSelectForm"  >
         
         <Form.Label>Skills</Form.Label>
         
         
         <Select
+          className="findSelect" 
           onChange={(e)=>{cSkills(e)}}
           closeMenuOnSelect={false}
           components={animatedComponents}

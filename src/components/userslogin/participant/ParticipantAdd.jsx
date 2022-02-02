@@ -20,10 +20,11 @@ function ParticipantAdd(props) {
   const[skills,cSkills]=useState([])
 
   const skillOptions = [
-    { value: 'JS', label: 'JaveScript' },
-    { value: 'HTML', label: 'Html' },
-    { value: 'CSS', label: 'CSS' }
-  ]
+    { value: 'JavaSfcript,', label: 'JavaScript' },
+    { value: 'Html,', label: 'Html' },
+    { value: 'Css,', label: 'Css' },
+    { value: 'React', label: 'React' }
+   ]
 const animatedComponents = makeAnimated();
 
   const submitHandler = (e) => {
@@ -186,6 +187,7 @@ const animatedComponents = makeAnimated();
         <Form.Label>Course</Form.Label>
         <Form.Select
         id= "course" name="course">
+        <option value="">Please select a course</option>
         <option value="Sheffield Council 12 week Bootcamp">Sheffield Council 12 week Bootcamp</option>
         <option value="Part-Time Software Development Bootcamp">Part-Time Software Development Bootcamp</option>
         <option value="Part-Time Data Science Bootcamp">Part-Time Data Science Bootcamp</option>
@@ -204,20 +206,25 @@ const animatedComponents = makeAnimated();
         </Form.Group>
         </Col>
         </Row>
+        
         <Form.Group>
         <Form.Label>Picture</Form.Label>
         <Upload client={props.client} changePicture={cPicture}/>
         </Form.Group>
+        <br/>
         <Form.Group>
         <Form.Label>CV</Form.Label>
         <CvUpload client={props.client} changeCv={cCV}/>
         </Form.Group>
-        <Form.Group>
+        <br/>
+
+        <Form.Group className="findSelectForm" >
         
         <Form.Label>Skills</Form.Label>
         
         
         <Select
+          className="findSelect" 
           onChange={(e)=>{cSkills(e)}}
           closeMenuOnSelect={false}
           components={animatedComponents}
