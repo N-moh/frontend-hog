@@ -4,7 +4,7 @@ import './SApp'
 import Add from "./Add";
 import Find from "./Find";
 import Button from 'react-bootstrap/Button';
-import Profilecard from './Profilecard';
+import Profcard from './Profcard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -43,7 +43,7 @@ function AdminDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <Profilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} admincomments={current.admincomments} portfolio={current.portfolio} hired={current.hired?"true":"false"} skills={current.skills} picture={current.picture} course={current.course} date={current.date} cv={current.cv} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
+          <Profcard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} admincomments={current.admincomments} portfolio={current.portfolio} hired={current.hired?"true":"false"} skills={current.skills} picture={current.picture} course={current.course} date={current.date} cv={current.cv} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profcard>
         </>
 
 
