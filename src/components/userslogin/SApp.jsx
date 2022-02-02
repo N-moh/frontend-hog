@@ -33,9 +33,10 @@ function SApp() {
     window.localStorage.setItem("username",newUsername);
     window.localStorage.setItem("post",newPost);
     changeToken(newToken);
-    changeRole(newRole);
     changeUsername(newUsername);
     changePost(newPost);
+    changeRole(newRole);
+    
   }
   const logout = () => {
     window.localStorage.removeItem("token");

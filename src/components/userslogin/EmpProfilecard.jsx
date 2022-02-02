@@ -51,16 +51,13 @@ function SProfilecard(props){
                 <br />
                     { show?
                     <>
-                    <Card.Text>{props.cv}</Card.Text>
                     <Card.Text>Hired: {props.hired}</Card.Text>
                     <Card.Text>Course: {props.course}</Card.Text>
                     <Card.Text>Skills: {props.skills}</Card.Text>
-                    <Card.Text>
-                   CV
-                   <IconButton aria-label="Download" target="_blank" href={props.cv} >
-                   <DownloadIcon />
-                  </IconButton>
-                   </Card.Text>
+                    <Card.Text>CV</Card.Text>
+                    <IconButton aria-label="Cv" target="_blank" href= {props.cv}>  
+                    <PersonIcon />
+                    </IconButton>
                     <Card.Text>Start date:<Moment format="DD MMM yyyy" > {props.date}</Moment></Card.Text>
                     <Button class="see-less-btn" onClick={() => setShow(!show)}>See less</Button>
                     <br />

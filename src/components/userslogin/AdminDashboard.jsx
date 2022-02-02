@@ -43,7 +43,7 @@ function AdminDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <Profilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} admincomments={current.admincomments} portfolio={current.portfolio} hired={current.hired?"true":"false"} skills={current.skills} picture={current.picture} course={current.course} date={current.date} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
+          <Profilecard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} admincomments={current.admincomments} portfolio={current.portfolio} hired={current.hired?"true":"false"} skills={current.skills} picture={current.picture} course={current.course} date={current.date} cv={current.cv} removeProfileForm={removeProfileForm} updateProfileForm={updateProfileForm}></Profilecard>
         </>
 
 

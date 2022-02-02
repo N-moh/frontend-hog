@@ -196,3 +196,9 @@ table{
   height:180px;
   width:180px;
 }
+.findSelect{
+  overflow: visible !important;
+}
+.findSelectForm{
+  height: 150px;
+}
