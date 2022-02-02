@@ -54,7 +54,7 @@ function SProfilecard(props){
                     <Card.Text>Hired: {props.hired}</Card.Text>
                     <Card.Text>Course: {props.course}</Card.Text>
                     <Card.Text>Skills: {props.skills}</Card.Text>
-                    <Card.Text>CV</Card.Text>
+                    <Card.Text>CV</Card.Text>//
                     <IconButton aria-label="Cv" target="_blank" href= {props.cv}>  
                     <PersonIcon />
                     </IconButton>
