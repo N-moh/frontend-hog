@@ -17,6 +17,7 @@ import { Container } from "react-bootstrap";
   
   const id = props.post
   const refreshList = () => {
+    console.log(id);
   props.client.getProfileForm(id).then((response) => cProfileForms([response.data]));
   };
   const updateProfileForm= (id) => {
