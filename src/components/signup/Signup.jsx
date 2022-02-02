@@ -3,15 +3,13 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { FormLabel } from '@material-ui/core';
-import { Radio } from '@material-ui/core';
-import { RadioGroup } from '@material-ui/core';
-import { FormControlLabel } from '@material-ui/core';
+import { ToggleButtonGroup } from '@mui/material';
+import ToggleButton from '@mui/material/ToggleButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
 
-    height:'80vh',
+    height:'800px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -33,29 +31,34 @@ const Signup = (props) => {
   // create state variables for each input
   const [firstname, setFirstName] = useState('');
   const [username, setUserName] = useState('');
-  const [role, setRole] = useState('');
   const [password, setPassword] = useState('');
   const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [alignment, setAlignment] = React.useState('employer');
+  const role = alignment
+  const handleChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
 
 
   const handleSubmit = e => {
     e.preventDefault();
     props.client.signup(username, role, password, firstname, lastname, email)
+    
   };
 
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
       <h2>Sign Up</h2>
-      <FormLabel id="demo-radio-buttons-group-label">Role</FormLabel>
-      <RadioGroup
-      aria-labelledby="demo-radio-buttons-group-label"
-      name="radio-buttons-group"
-      onChange={e => setRole(e.target.value)}
+      <ToggleButtonGroup
+        color="primary"
+        value={alignment}
+        exclusive
+        onChange={handleChange}
       >
-    <FormControlLabel value="participant" control={<Radio />} label="Participant" />
-    <FormControlLabel value="employer" control={<Radio />} label="Employer" />
-      </RadioGroup>
+      <ToggleButton value="employer">Employer</ToggleButton>
+      <ToggleButton value="participant">Participant</ToggleButton>
+      </ToggleButtonGroup>
       <TextField
         label="User Name"
         variant="filled"
@@ -94,9 +97,6 @@ const Signup = (props) => {
         onChange={e => setEmail(e.target.value)}
       />
       <div>
-        <Button variant="contained">
-          Cancel
-        </Button>
         <Button type="submit" variant="contained" color="primary">
           Signup
         </Button>

@@ -200,5 +200,33 @@ table{
   overflow: visible !important;
 }
 .findSelectForm{
-  height: 150px;
+  height: 225px;
+}
+
+.signupRow{
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  text-align: center;
+}
+.buttonSignUp {
+  padding: 3px 15px;
+  border-radius: 5px;
+  background-color: #26446693;
+  color: #fff;
+  border: none;
+  outline:none;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease;
+  align-items: center;
+  justify-content:center;
+  max-width: 50px;
+}
+
+.buttonSignUp:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(53, 53, 53, 0.9);
 }
