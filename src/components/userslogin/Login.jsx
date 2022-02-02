@@ -1,8 +1,28 @@
-import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-
-function Login(props) {
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { FormLabel } from '@material-ui/core';
+const useStyles = makeStyles(theme => ({
+  root: {
+    height:'500px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: theme.spacing(2),
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '300px',
+    },
+    '& .MuiButtonBase-root': {
+      margin: theme.spacing(2),
+    },
+  },
+}));
+const Login = (props) => {
+  const classes = useStyles();
+  // create state variables for each input
   const [disabled, cDisabled] = useState(false);
   const submitHandler = (e) => {
   console.log("submitted");
@@ -23,32 +43,31 @@ function Login(props) {
     });
   };
   return (
-    <>
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-    <h2 >Login</h2>
-      <br />
-      </div>
-  <div style={{ display: "flex", justifyContent: "center", alignItems: "center"}} >
-      <Form onSubmit={(e) => submitHandler(e)} >
-  <Form.Group className="mb-3" >
-    <Form.Label><h4>Name</h4></Form.Label><br/>
-    <input required type="text" name="username" disabled={disabled} placeholder="enter name" />
-  </Form.Group>
-  <Form.Group className="mb-3" >
-    <Form.Label><h4>Password</h4></Form.Label><br/>
-    <input required type="password"  name="password" disabled={disabled} placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" >
-    {/*<Form.Check type="checkbox" label="Check me out" />*/}
-  </Form.Group>
-  <Button  type="submit" disabled={disabled}>
-          {" "}
+    <form className={classes.root} onSubmit={(e) => submitHandler(e)}>
+      <h2>Login</h2>
+      <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
+        <TextField
+        label="Username"
+        variant="filled"
+        required
+        name="username"
+        // value={username}
+        />
+      <TextField
+        label="Password"
+        variant="filled"
+        type="password"
+        required
+        name="password"
+        // value={password}
+      />
+        <div>
+          <Button type="submit" variant="contained" color="primary">
+           {" "}
           Submit{" "}
         </Button>
-</Form>
-      
-  </div>
-    </>
+       </div>
+    </form>
   );
-}
+};
 export default Login;
