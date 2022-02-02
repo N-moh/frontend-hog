@@ -17,11 +17,6 @@ export default function Menu({ menuOpen, setMenuOpen }) {
           Dashboard
           </li>
           </Link>
-          <Link to="signup">  
-        <li onClick={()=>setMenuOpen(false)}>
-          Signup
-          </li>
-          </Link>
    
    
        

@@ -32,10 +32,7 @@ function App() {
     <Route path="/intro" element={<Intro/>}/>
     <Route path="/" element={<Intro/>}/>
     <Route path="*" element={<Intro/>}/>
-    <Route path="/dashboard" element={<SApp/>}/>
-    <Route path="/signup" element={<Signup/>}/>
-
-    
+    <Route path="/dashboard" element={<SApp/>}/>    
     </Routes>
     </BrowserRouter>
     </div>
