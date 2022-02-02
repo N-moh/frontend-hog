@@ -126,7 +126,7 @@ export default function ProfCard(props) {
 
           <CardContent>
           <Button variant="contained" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
-          
+          <Button variant="outlined" color="error" size="sm" onClick={() => props.removeProfileForm(props.id)}> remove</Button>
         </CardContent>
       </Collapse>
     </Card>
