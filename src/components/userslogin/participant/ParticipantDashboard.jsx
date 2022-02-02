@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './SApp'
+import '../SApp'
 import ParticipantAdd from "./ParticipantAdd";
 import Button from 'react-bootstrap/Button';
 import ParticipantCard from './ParticipantCard';

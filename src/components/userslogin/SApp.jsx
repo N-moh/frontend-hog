@@ -8,7 +8,7 @@ import EmpDashboard from "./EmpDashboard";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Signup from "../signup/Signup";
-import ParticipantDashboard from "./ParticipantDashboard";
+import ParticipantDashboard from "./participant/ParticipantDashboard";
 import { Col, Container, Row } from "react-bootstrap";
 
 
