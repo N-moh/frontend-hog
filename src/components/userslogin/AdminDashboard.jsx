@@ -8,6 +8,7 @@ import Profcard from './Profcard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+import Tracker from "./Tracker";
 
 
 //mport Table from 'react-bootstrap/Table';
@@ -102,6 +103,7 @@ function AdminDashboard(props) {
         </Col>
         </Row>
         </Container>
+        <Tracker/>
       </main>
 
   );
