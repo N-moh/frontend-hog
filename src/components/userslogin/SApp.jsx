@@ -3,7 +3,7 @@ import AdminDashboard from "./AdminDashboard";
 import { ApiClient } from "./apiClient";
 import Login from "./Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+import './App.scss'
 import EmpDashboard from "./EmpDashboard";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";

@@ -30,9 +30,9 @@ export default function Intro() {
             Hire our <span ref={textRef}></span>
           </h3>
         </div>
-        <a href="#login">
-          <img src="/assets/down.png" alt="" />
-        </a>
+        {/* <a href="#login"> */}
+          <img src="/assets/hire.jpg" alt="" />
+        {/* </a> */}
       </div>
     </div>
   );
