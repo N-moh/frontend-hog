@@ -7,10 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import { colourOptions } from '../data';
 
 const skillOptions = [
-    { value: 'JS', label: 'JaveScript' },
-    { value: 'HTML', label: 'Html' },
-    { value: 'CSS', label: 'CSS' }
-  ]
+  { value: 'JS', label: 'Javascript' },
+  { value: 'HTML', label: 'Html' },
+  { value: 'CSS', label: 'CSS' },
+  { value: 'React', label: 'React'}
+]
 const animatedComponents = makeAnimated();
 
 export default function MultiSelectSkills() {

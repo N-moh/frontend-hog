@@ -12,9 +12,10 @@ function Empfind(props) {
     const[skills,cSkills]=useState([])
     const animatedComponents = makeAnimated();
     const skillOptions = [
-        { value: 'JS', label: 'JavaScript' },
+        { value: 'JS', label: 'Javascript' },
         { value: 'HTML', label: 'Html' },
-        { value: 'CSS', label: 'CSS' }
+        { value: 'CSS', label: 'CSS' },
+        { value: 'React', label: 'React'}
     ]
     const submitHandler = (e) => {
         e.preventDefault();

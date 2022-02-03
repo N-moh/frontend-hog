@@ -20,11 +20,11 @@ function ParticipantAdd(props) {
   const[skills,cSkills]=useState([])
 
   const skillOptions = [
-    { value: 'JavaScript,', label: 'JavaScript' },
-    { value: 'Html,', label: 'Html' },
-    { value: 'Css,', label: 'Css' },
-    { value: 'React', label: 'React' }
-   ]
+    { value: 'JS', label: 'Javascript' },
+    { value: 'HTML', label: 'Html' },
+    { value: 'CSS', label: 'CSS' },
+    { value: 'React', label: 'React'}
+]
 const animatedComponents = makeAnimated();
 
   const submitHandler = (e) => {

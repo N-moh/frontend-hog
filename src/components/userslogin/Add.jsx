@@ -12,10 +12,11 @@ function Add(props) {
   const [disabled, cDisabled] = useState(false);
   const[skills,cSkills]=useState([])
   const skillOptions = [
-    { value: 'JS', label: 'JaveScript' },
+    { value: 'JS', label: 'Javascript' },
     { value: 'HTML', label: 'Html' },
-    { value: 'CSS', label: 'CSS' }
-  ]
+    { value: 'CSS', label: 'CSS' },
+    { value: 'React', label: 'React'}
+]
 const animatedComponents = makeAnimated();
 
 
