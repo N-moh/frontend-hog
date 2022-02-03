@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../SApp'
 import ParticipantAdd from "./ParticipantAdd";
-import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
 import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
@@ -51,7 +51,7 @@ import { Container } from "react-bootstrap";
           <h4>Logged in as {props.username}</h4>
         </Row>
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
-      <Button  onClick={props.logout}>
+      <Button variant="contained" color="primary" onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>

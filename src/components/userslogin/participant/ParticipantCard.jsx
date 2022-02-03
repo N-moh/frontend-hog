@@ -41,7 +41,7 @@ export default function ParticipantCard(props) {
   };
 
   return (
-    <Card  className="Card "sx={{ maxWidth: 445,}}>
+    <Card  className="Card "sx={{ maxWidth: 445}}>
       <CardHeader 
         avatar={
           <Avatar aria-label="">
@@ -57,7 +57,10 @@ export default function ParticipantCard(props) {
         
         subheader={`${props.email}`}
       />
-      <Moment format="DD MMM yyyy" >{props.date}</Moment>
+      <CardContent>Joined on 
+      <Moment format=" DD MMM yyyy" >{props.date}</Moment>
+      </CardContent>
+    
       
       <CardMedia
 
@@ -132,7 +135,7 @@ export default function ParticipantCard(props) {
 
 
           <CardContent>
-          <Button variant="contained" size="sm" onClick={() => props.updateProfileForm(props.id)}> update</Button>
+          <Button variant="contained" color="primary" onClick={() => props.updateProfileForm(props.id)}> update</Button>
           
         </CardContent>
       </Collapse>

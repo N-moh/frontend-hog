@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React,{ useState } from 'react';
-import { Button, Form, Row, Col } from "react-bootstrap";
+import { Form, Row, Col } from "react-bootstrap";
 //import { postImage } from './Api';
+import Button from '@mui/material/Button';
 
 
 export default function CvUpload(props) {
@@ -34,7 +35,7 @@ return (
     <Form.Control type="file" name="cvFile" onChange={changeHandler} ></Form.Control>
     </Col>
     <Col md="auto">
-    <Button size="sm" onClick={submitFile} >Upload</Button>
+    <Button variant="contained" color="primary" size="small" onClick={submitFile} >Upload</Button>
     </Col>
     </Form.Group>
     </Row>

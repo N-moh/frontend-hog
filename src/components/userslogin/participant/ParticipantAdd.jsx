@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FormLabel } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
 import Form from 'react-bootstrap/Form';
 import Upload from "./Upload";
 import CvUpload from "./cvUpload";
@@ -123,7 +122,8 @@ const animatedComponents = makeAnimated();
           type="text"
           defaultValue={props.currentProfileForm?.bio || ""}
           name="bio"
-          disabled={disabled}>
+          disabled={disabled}
+          placeholder="Few words about yourself...">  
         </Form.Control>
         </Form.Group>
         </Row>
@@ -197,7 +197,7 @@ const animatedComponents = makeAnimated();
         </Col>
         <Col md>
         <Form.Group>
-        <Form.Label>Date</Form.Label>
+        <Form.Label>Start date</Form.Label>
         <Form.Control
           type="date"
           defaultValue={props.currentProfileForm?.date}
@@ -237,7 +237,7 @@ const animatedComponents = makeAnimated();
         
         </Form.Group>
         <br/>
-        <Button size="sm"type="submit" disabled={disabled}>
+        <Button variant="contained" color="primary"type="submit" disabled={disabled}>
           {" "}
           Submit{" "}
         </Button>

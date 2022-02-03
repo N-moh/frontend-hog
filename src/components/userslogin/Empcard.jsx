@@ -8,7 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 //import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-//import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 //import FavoriteIcon from '@mui/icons-material/Favorite';
 //import ShareIcon from '@mui/icons-material/Share';
@@ -53,8 +53,9 @@ export default function EmpCard(props) {
         
         subheader={`${props.email}`}
       />
-      <Moment format="DD MMM yyyy" >{props.date}</Moment>
-      
+      <CardContent>Joined on 
+      <Moment format=" DD MMM yyyy" >{props.date}</Moment>
+      </CardContent>
       <CardMedia
 
         component="img"
