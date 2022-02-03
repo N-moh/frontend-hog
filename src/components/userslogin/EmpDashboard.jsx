@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SApp'
 //import Add from "./Add";
-import Find from "./Find";
+import Empfind from "./Empfind";
 import Button from 'react-bootstrap/Button';
 import Empcard from './Empcard';
 import { Col } from "react-bootstrap";
@@ -22,8 +22,8 @@ function EmpDashboard(props) {
     props.client.getEmployerForms().then((response) => cProfileForms(response.data));
   };
 
-  const querySearch = (searchParams) => {
-    props.client.queryResult(searchParams).then((response) => cProfileForms(response.data))
+  const querySearch2 = (searchEmpParams) => {
+    props.client.queryResult2(searchEmpParams).then((response) => cProfileForms(response.data))
   }
 
   useEffect(() => {
@@ -61,9 +61,9 @@ function EmpDashboard(props) {
       <Col>
         { show2? 
           <>
-        <Find
+        <Empfind
             client={props.client}
-            querySearch = {querySearch}
+            querySearch2 = {querySearch2}
             currentProfileForm={current}
           />
           <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a>

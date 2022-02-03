@@ -20,7 +20,7 @@ function ParticipantAdd(props) {
   const[skills,cSkills]=useState([])
 
   const skillOptions = [
-    { value: 'JavaSfcript,', label: 'JavaScript' },
+    { value: 'JavaScript,', label: 'JavaScript' },
     { value: 'Html,', label: 'Html' },
     { value: 'Css,', label: 'Css' },
     { value: 'React', label: 'React' }

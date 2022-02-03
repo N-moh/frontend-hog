@@ -99,8 +99,12 @@ export class ApiClient {
     return this.authenticatedCall("put", `${url}${id}`, { firstname,lastname,email,bio,linkedin,github,portfolio,admincomments,hired,course,skills,date});
   }
 
-  //Find functionality
+  //Find functionality for Admins
   queryResult(searchParams){
     return this.authenticatedCall("post", `${url}tda/search`, searchParams)
+  }
+  //Find functionality for Employers
+  queryResult2(searchEmpParams){
+    return this.authenticatedCall("post", `${url}tda/empsearch`, searchEmpParams)
   }
 }
