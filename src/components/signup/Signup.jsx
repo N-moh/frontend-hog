@@ -8,8 +8,9 @@ import ToggleButton from '@mui/material/ToggleButton';
 
 const useStyles = makeStyles(theme => ({
   root: {
-
-    height:'800px',
+    // backgroundImage:`url(${"/assets/pic1.jpg"})`,
+    backgroundColor:'#C6F5DA',
+    height: '600px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -49,6 +50,9 @@ const Signup = (props) => {
 
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
+      {/* <Button type="submit" style={{ maxWidth: '130px', maxHeight: '70px' }}  variant="contained" color="primary">
+      <h3> Sign Up</h3>
+      </Button> */}
       <h2>Sign Up</h2>
       <ToggleButtonGroup
         color="primary"
@@ -98,7 +102,7 @@ const Signup = (props) => {
       />
       <div>
         <Button type="submit" variant="contained" color="primary">
-          Signup
+          Submit
         </Button>
       </div>
     </form>
