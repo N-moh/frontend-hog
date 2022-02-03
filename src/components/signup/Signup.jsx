@@ -9,17 +9,22 @@ import ToggleButton from '@mui/material/ToggleButton';
 const useStyles = makeStyles(theme => ({
   root: {
     // backgroundImage:`url(${"/assets/pic1.jpg"})`,
-    backgroundColor:'#C6F5DA',
+    backgroundColor:'white',
+    // opacity:0.2,
     height: '600px',
+    opacity:'0.85',
+    TextField:'blue',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     padding: theme.spacing(2),
 
+
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
       width: '300px',
+     
     },
     '& .MuiButtonBase-root': {
       margin: theme.spacing(2),
@@ -61,7 +66,7 @@ const Signup = (props) => {
         onChange={handleChange}
       >
       <ToggleButton value="employer">Employer</ToggleButton>
-      <ToggleButton value="participant">Participant</ToggleButton>
+      <ToggleButton className="see-btn" value="participant">Participant</ToggleButton>
       </ToggleButtonGroup>
       <TextField
         label="User Name"
