@@ -5,7 +5,9 @@ import Button from '@material-ui/core/Button';
 import { FormLabel } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
-    height:'500px',
+    // backgroundImage:`url(${"/assets/pic1.jpg"})`,
+    backgroundColor:'#C6F5DA',
+    height:'600px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -44,7 +46,10 @@ const Login = (props) => {
   };
   return (
     <form className={classes.root} onSubmit={(e) => submitHandler(e)}>
-      <h2>Login</h2>
+    <Button type="submit" style={{maxWidth: '150px',maxHeight: '100px', minWidth: '100px', minHeight: '30px'}} variant="contained" color="primary">
+      <h3> Login</h3>
+      </Button>
+      {/* <h2>Login</h2> */}
       <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
         <TextField
         label="Username"
@@ -62,11 +67,11 @@ const Login = (props) => {
         // value={password}
       />
         <div>
-          <Button type="submit" variant="contained" color="primary">
-           {" "}
+        <Button type="submit" variant="contained" color="primary">
+        {" "}
           Submit{" "}
         </Button>
-       </div>
+    </div>
     </form>
   );
 };
