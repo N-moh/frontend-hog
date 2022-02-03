@@ -102,8 +102,13 @@ function AdminDashboard(props) {
         :<a class="buttonShowAdd2" onClick={() => setShow2(!show2)}>Find Participant</a> }
         </Col>
         </Row>
+        <Row>
+          <Col>
+          <Tracker/>
+          </Col>
+        </Row>
         </Container>
-        <Tracker/>
+        
       </main>
 
   );
