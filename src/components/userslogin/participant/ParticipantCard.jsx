@@ -41,7 +41,7 @@ export default function ParticipantCard(props) {
   };
 
   return (
-    <Card  className="Card "sx={{ maxWidth: 345 }}>
+    <Card  className="Card "sx={{ maxWidth: 445,}}>
       <CardHeader 
         avatar={
           <Avatar aria-label="">
@@ -63,7 +63,7 @@ export default function ParticipantCard(props) {
 
         component="img"
         src={props.picture} 
-        height="194"
+        height="310"
         alt="profile pic" 
         //src="https://i.imgur.com/2idphdd.png"
         

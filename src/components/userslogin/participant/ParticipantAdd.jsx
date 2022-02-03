@@ -20,7 +20,7 @@ function ParticipantAdd(props) {
   const[skills,cSkills]=useState([])
 
   const skillOptions = [
-    { value: 'JavaSfcript,', label: 'JavaScript' },
+    { value: 'JavaScript,', label: 'JavaScript' },
     { value: 'Html,', label: 'Html' },
     { value: 'Css,', label: 'Css' },
     { value: 'React', label: 'React' }
@@ -67,6 +67,7 @@ const animatedComponents = makeAnimated();
   };
   return (
     <>
+    
     <h3> Update your profile </h3>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
       
