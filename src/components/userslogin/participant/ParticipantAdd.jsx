@@ -67,6 +67,7 @@ const animatedComponents = makeAnimated();
   };
   return (
     <>
+    
     <h3> Update your profile </h3>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
       
