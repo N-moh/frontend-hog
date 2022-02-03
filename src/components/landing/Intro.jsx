@@ -18,7 +18,7 @@ export default function Intro() {
     <div className="intro" id="intro">
       <div className="left">
         <div className="imgContainer">
-          <img src="assets/logo1.png" alt="" />
+          <img src="assets/logo2.png" alt="" />
         </div>
       </div>
       <div className="right">
@@ -31,7 +31,7 @@ export default function Intro() {
           </h3>
         </div>
         <a href="#login">
-          <img src="assets/down.png" alt="" />
+          <img src="/assets/down.png" alt="" />
         </a>
       </div>
     </div>
