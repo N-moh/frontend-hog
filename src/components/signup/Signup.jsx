@@ -54,11 +54,10 @@ const Signup = (props) => {
 
 
   const handleSubmit = e => {
+    toast.success("You have successfully registered")
     e.preventDefault();
-    toast.success("Signing up !")
-    
     props.client.signup(username, role, password, firstname, lastname, email)
-    
+    toast.info("You can login now")
   };
 
   return (

@@ -3,6 +3,7 @@ import React,{ useState } from 'react';
 import { Form, Row, Col } from "react-bootstrap";
 //import { postImage } from './Api';
 import Button from '@mui/material/Button';
+import {toast} from 'react-toastify';
 
 
 export default function Upload(props) {
@@ -20,10 +21,16 @@ export default function Upload(props) {
 
   const submitFile = () => {
     props.client.postImage('tom',selectedFile)
+
     .then((res) => {
     console.log(res)
     props.changePicture(res.data.link);
+    toast.success("Picture uploaded")
     })
+    .catch((error) => {
+      toast.error("Failed to upload")
+       
+   });
   } 
   
 

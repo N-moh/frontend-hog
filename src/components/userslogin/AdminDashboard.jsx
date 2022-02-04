@@ -26,6 +26,7 @@ function AdminDashboard(props) {
   };
   const removeProfileForm = (id) => {
     props.client.removeProfileForm(id).then(() => refreshList());
+  
   };
   const updateProfileForm= (id) => {
     let e=profileForms.filter((profileForm)=>{return profileForm._id == id});

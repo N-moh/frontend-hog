@@ -6,14 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-//import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-//import FavoriteIcon from '@mui/icons-material/Favorite';
-//import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-//import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Moment from "react-moment";
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -121,6 +117,12 @@ export default function ProfCard(props) {
           <DownloadIcon />
         </IconButton>
         </Typography>
+          </CardContent>
+          <CardContent>
+          <Typography paragraph>
+            Admin comments: {props.admincomments}
+            
+          </Typography>
           </CardContent>
 
 

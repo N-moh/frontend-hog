@@ -3,6 +3,7 @@ import React,{ useState } from 'react';
 import { Form, Row, Col } from "react-bootstrap";
 //import { postImage } from './Api';
 import Button from '@mui/material/Button';
+import {toast} from 'react-toastify';
 
 
 export default function CvUpload(props) {
@@ -23,7 +24,12 @@ const submitFile = () => {
     .then((res) => {
     console.log(res)
     props.changeCv(res.data.link);
+    toast.success("CV uploaded")
     })
+    .catch((error) => {
+        toast.error("Failed to upload")
+        
+     });
 } 
 
 
