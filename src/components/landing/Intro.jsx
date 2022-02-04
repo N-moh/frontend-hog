@@ -4,7 +4,7 @@ import React,{ useEffect, useRef } from "react";
 
 export default function Intro() {
   const textRef = useRef();
-
+  //Animated text with ityped
   useEffect(() => {
     init(textRef.current, {
       showCursor: true,
@@ -30,7 +30,6 @@ export default function Intro() {
             Hire our <span ref={textRef}></span>
           </h3>
         </div>
-        {/* <a href="#login"> */}
           <img src="/assets/hire.jpg" alt="" />
         {/* </a> */}
       </div>
