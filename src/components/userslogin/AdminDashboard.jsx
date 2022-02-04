@@ -106,6 +106,7 @@ function AdminDashboard(props) {
         </Row>
         <Row>
           <Col>
+          {/*Data visualisation tracker from MongoDB charts*/}
           <Tracker/>
           </Col>
         </Row>

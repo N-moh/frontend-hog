@@ -1,3 +1,6 @@
+
+//experimented with React MultiSelect as a separate component
+
 import React from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';

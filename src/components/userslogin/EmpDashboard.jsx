@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SApp'
-//import Add from "./Add";
 import Button from '@mui/material/Button';
 import Empfind from "./Empfind";
-//import Button from 'react-bootstrap/Button';
 import Empcard from './Empcard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 
 
-//mport Table from 'react-bootstrap/Table';
+
 function EmpDashboard(props) {
   const [profileForms, cProfileForms] = useState([]);
   const [current, cCurrent] = useState(undefined);
@@ -35,7 +33,20 @@ function EmpDashboard(props) {
     return profileForms.map((current) => {
       return (
         <>
-          <Empcard id={current._id} firstname={current.firstname} lastname={current.lastname} email={current.email} bio={current.bio} linkedin={current.linkedin} github={current.github} portfolio={current.portfolio} hired={current.hired?"true":"false"} skills={current.skills} picture={current.picture} course={current.course} date={current.date} cv={current.cv} ></Empcard>
+        <Empcard id={current._id} 
+          firstname={current.firstname} 
+          lastname={current.lastname} 
+          email={current.email}
+          bio={current.bio} 
+          linkedin={current.linkedin} 
+          github={current.github} 
+          portfolio={current.portfolio} 
+          hired={current.hired?"true":"false"}
+          skills={current.skills} 
+          picture={current.picture} 
+          course={current.course} 
+          date={current.date} 
+          cv={current.cv} ></Empcard>
         </>
       );
     });

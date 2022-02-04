@@ -6,14 +6,9 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-//import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-
 import Typography from '@mui/material/Typography';
-//import FavoriteIcon from '@mui/icons-material/Favorite';
-//import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-//import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Moment from "react-moment";
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -43,12 +38,6 @@ export default function EmpCard(props) {
   return (
     <Card  className="Card "sx={{ maxWidth: 245 }}>
       <CardHeader 
-        /*avatar={
-          <Avatar aria-label="">
-          </Avatar>
-        }*/
-        
-        
         title={`${props.firstname} ${props.lastname}`}
         
         subheader={`${props.email}`}
