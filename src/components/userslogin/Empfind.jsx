@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Container  from "react-bootstrap/Container";
 import './App.scss';
-import  Button from "react-bootstrap/Button";
+import Button from '@mui/material/Button';
+//import  Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
@@ -106,7 +107,7 @@ function Empfind(props) {
         </Select>
         </Form.Group>
         <br/>
-        <Button  size="sm" type="submit" disabled={disabled}>
+        <Button  variant="contained" color="primary"  type="submit" disabled={disabled}>
             {" "}
             Search{" "}
         </Button>

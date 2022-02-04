@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../SApp'
 import ParticipantAdd from "./ParticipantAdd";
-import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
 import ParticipantCard from './ParticipantCard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
@@ -19,16 +19,33 @@ import { Container } from "react-bootstrap";
   const refreshList = () => {
     console.log(id);
   props.client.getProfileForm(id).then((response) => cProfileForms([response.data]));
+  
+  
   };
   const updateProfileForm= (id) => {
-    let e=profileForms.filter((profileForm)=>{return profileForm._id == id});
+    console.log("called updateprofileform",profileForms)
+    props.client.getProfileForm(id).then((response) => {
+    
+   
+    let e=[response.data].filter((profileForm)=>{return profileForm._id == id});
     if(e.length>0){
     cCurrent(e[0])
+    console.log("current",e[0]);
     }
+    
+    });
+   
+
   };
 
   useEffect(() => {
+    updateProfileForm(id);
+  },current)
+
+  useEffect(() => {
     refreshList();
+    //where you need to pre populate update
+   
   }, []);
   
   function buildcards() {
@@ -51,7 +68,7 @@ import { Container } from "react-bootstrap";
           <h4>Logged in as {props.username}</h4>
         </Row>
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
-      <Button  onClick={props.logout}>
+      <Button variant="contained" color="primary" onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
@@ -64,6 +81,7 @@ import { Container } from "react-bootstrap";
       <Col xs={6}>
       <ParticipantAdd
       username={props.username}
+      id={id}
         client={props.client}
         refreshList={() => {
           refreshList();
@@ -71,6 +89,7 @@ import { Container } from "react-bootstrap";
         }}
         currentProfileForm={current}
         logout={props.logout}
+        updateProfileForm={updateProfileForm}
       />
       </Col>
       </Row>

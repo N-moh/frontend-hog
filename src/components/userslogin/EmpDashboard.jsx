@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SApp'
 //import Add from "./Add";
+import Button from '@mui/material/Button';
 import Empfind from "./Empfind";
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 import Empcard from './Empcard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
@@ -48,7 +49,7 @@ function EmpDashboard(props) {
             <h4>logged in as {props.username}</h4>
           </Row>
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
-      <Button  onClick={props.logout}>
+      <Button  variant="contained" color="primary" onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
@@ -66,10 +67,10 @@ function EmpDashboard(props) {
             querySearch2 = {querySearch2}
             currentProfileForm={current}
           />
-          <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a>
-          <a class="see-less-btn" onClick={() => refreshList()}>Clear Filtered List</a>
+          <a class="buttonSignUp" onClick={() => setShow2(!show2)}>See less</a>
+          <a class="buttonSignUp" onClick={() => refreshList()}>Clear Filtered List</a>
           </>
-        :<a class="buttonShowAdd2" onClick={() => setShow2(!show2)}>Find Participant</a> }
+        :<a class="buttonSignUp" onClick={() => setShow2(!show2)}>Find Participant</a> }
         </Col>
         </Row>
         </Container>

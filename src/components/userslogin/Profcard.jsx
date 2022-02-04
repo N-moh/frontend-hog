@@ -49,9 +49,9 @@ export default function ProfCard(props) {
         
         subheader={`${props.email}`}
       />
-      <Typography>Joined on:
-      <Moment format="DD MMM yyyy" >{props.date}</Moment>
-      </Typography>
+      <CardContent>Joined on 
+      <Moment format=" DD MMM yyyy" >{props.date}</Moment>
+      </CardContent>
       <CardMedia
 
         component="img"

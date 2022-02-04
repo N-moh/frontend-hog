@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SApp'
+import Button from '@mui/material/Button';
 import Add from "./Add";
 import Find from "./Find";
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 import Profcard from './Profcard';
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
@@ -61,7 +62,7 @@ function AdminDashboard(props) {
           </Row>
     
       <div style={{ display: "flex", justifyContent: "right", alignItems: "right" }}>
-      <Button  onClick={props.logout}>
+      <Button  variant="contained" color="primary" onClick={props.logout}>
           {" "}
           Logout{" "}
         </Button>
@@ -84,9 +85,9 @@ function AdminDashboard(props) {
         currentProfileForm={current}
         logout={props.logout}
       />
-      <a class="see-less-btn" onClick={() => setShow(!show)}>See less</a>
+      <a class="buttonSignUp"onClick={() => setShow(!show)}>See less</a>
       </>
-      : <a class="buttonShowAdd2" onClick={() => setShow(!show)}>Add post</a> }
+      : <a class="buttonSignUp" onClick={() => setShow(!show)}>Add/Update post</a> }
       </Col>
       <Col xs={6}>
         { show2? 
@@ -96,10 +97,10 @@ function AdminDashboard(props) {
             querySearch = {querySearch}
             currentProfileForm={current}
           />
-          <a class="see-less-btn" onClick={() => setShow2(!show2)}>See less</a>
-          <a class="see-less-btn" onClick={() => refreshList()}>Clear Filtered List</a>
+          <a class="buttonSignUp" onClick={() => setShow2(!show2)}>See less</a>
+          <a class="buttonSignUp" onClick={() => refreshList()}>Clear Filtered List</a>
           </>
-        :<a class="buttonShowAdd2" onClick={() => setShow2(!show2)}>Find Participant</a> }
+        :<a class="buttonSignUp" onClick={() => setShow2(!show2)}>Find Participant</a> }
         </Col>
         </Row>
         <Row>
