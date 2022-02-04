@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { FormLabel } from '@material-ui/core';
+import {toast} from 'react-toastify';
+
 const useStyles = makeStyles(theme => ({
   root: {
     // backgroundImage:`url(${"/assets/pic1.jpg"})`,
@@ -40,8 +42,7 @@ const Login = (props) => {
       console.log(response.data.profileForm);
     })
     .catch((error) => {
-        alert("an error occurred, please try again")
-        console.log(error);
+       toast.error("Bad user credentials")
         cDisabled(false);
     });
   };
