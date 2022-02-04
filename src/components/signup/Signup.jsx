@@ -5,9 +5,11 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { ToggleButtonGroup } from '@mui/material';
 import ToggleButton from '@mui/material/ToggleButton';
+import {toast} from 'react-toastify';
 
-import toastr from "toastr";
-import "toastr/build/toastr.min.css";
+
+//import toastr from "toastr";
+//import "toastr/build/toastr.min.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -50,9 +52,11 @@ const Signup = (props) => {
   };
 
 
+
   const handleSubmit = e => {
     e.preventDefault();
-    toastr.success("Signing up !")
+    toast.success("Signing up !")
+    
     props.client.signup(username, role, password, firstname, lastname, email)
     
   };

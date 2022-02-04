@@ -3,11 +3,12 @@ import React,{ useState } from "react";
 import Topbar from "./components/nav/Topbar";
 import Intro from "./components/landing/Intro"
 import SApp from "./components/userslogin/SApp"
-//import Signup from "./components/signup/Signup"
-//import Jobs from "./components/works/Works"
-//import Testimonials from "./components/testimonials/Testimonials"
 import Contact from "./components/contact/Contact"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //import "./app.scss"
+
 import {
   BrowserRouter,
   Routes,
@@ -35,6 +36,7 @@ function App() {
     <Route path="/dashboard" element={<SApp/>}/>    
     </Routes>
     </BrowserRouter>
+    <ToastContainer />
     </div>
   );
 }

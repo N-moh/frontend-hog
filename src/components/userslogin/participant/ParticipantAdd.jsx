@@ -58,6 +58,8 @@ const animatedComponents = makeAnimated();
         cDisabled(false);
         document.getElementById("addForm").reset();
         props.refreshList();
+        props.updateProfileForm(props.id);
+
       })
       .catch(() => {
         alert("an error occured, please try again");
